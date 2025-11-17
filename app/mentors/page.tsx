@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Star, Award, BookOpen, Users, Linkedin, Twitter, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 const mentors = [
   {
@@ -69,9 +70,9 @@ const mentors = [
 export default function MentorsPage() {
   return (
     <main className="min-h-screen pt-20">
-      <section className="py-20 bg-gradient-to-br from-[#f8f9fa] via-[#fff5f8] to-[#f0f4ff] relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#C71585]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <section className="py-20 bg-relative overflow-hidden">
+        {/* <div className="absolute top-0 left-0 w-96 h-96 bg-[#C71585]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div> */}
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -99,12 +100,13 @@ export default function MentorsPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl group-hover:shadow-2xl transition-all duration-300"></div>
                 <div className="relative p-8 space-y-4">
                   <div className="relative w-32 h-32 mx-auto">
-                    <img
+                    <Image
+                    fill
                       src={mentor.image}
                       alt={mentor.name}
                       className="w-full h-full rounded-full object-cover border-4 border-[#C71585] group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-[#C71585] to-[#FF1493] rounded-full flex items-center justify-center border-4 border-white">
+                    <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-black rounded-full flex items-center justify-center border-4 border-white">
                       <Award className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -139,16 +141,7 @@ export default function MentorsPage() {
                     <span>{mentor.experience} Experience</span>
                   </div>
 
-                  <div className="flex justify-center space-x-3 pt-4">
-                    {[Linkedin, Twitter, Mail].map((Icon, i) => (
-                      <button
-                        key={i}
-                        className="w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center hover:bg-[#C71585] hover:text-white transition-all duration-300 border border-gray-200"
-                      >
-                        <Icon className="w-4 h-4" />
-                      </button>
-                    ))}
-                  </div>
+              
                 </div>
               </motion.div>
             ))}

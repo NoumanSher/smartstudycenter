@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BookOpen, Users, Video, Award, Clock, Target } from 'lucide-react';
+import { BookOpen, Users, Video, Award, Clock, Target,LucideSchool2 } from 'lucide-react';
 
 const features = [
   {
@@ -23,9 +23,9 @@ const features = [
     color: 'from-purple-500 to-pink-500',
   },
   {
-    icon: Award,
-    title: 'Certifications',
-    description: 'Earn recognized certificates upon course completion to boost your profile.',
+    icon: LucideSchool2,
+    title: 'Curriculum',
+    description: 'A structured learning journey to achieve specific educational goals and skills.',
     color: 'from-orange-500 to-red-500',
   },
   {
@@ -44,9 +44,9 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C71585]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    <section className="py-20  relative overflow-hidden">
+      {/* <div className="absolute top-0 right-0 w-96 h-96 bg-[#C71585]/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div> */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

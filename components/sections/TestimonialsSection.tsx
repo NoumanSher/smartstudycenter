@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const testimonials = [
@@ -53,9 +54,9 @@ export default function TestimonialsSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white to-[#fff5f8] relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#C71585]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    <section className="py-20  relative overflow-hidden">
+      {/* <div className="absolute top-0 left-0 w-96 h-96 bg-[#C71585]/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div> */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -99,8 +100,10 @@ export default function TestimonialsSection() {
                 </div>
 
                 <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">
-                  <img
+                  <Image
                     src={testimonial.image}
+                    width={48}
+                    height={48}
                     alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover border-2 border-[#C71585]"
                   />

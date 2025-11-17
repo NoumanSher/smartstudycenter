@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, GraduationCap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import Image from 'next/image';
 const navLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Courses', href: '/courses' },
@@ -38,7 +38,13 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="relative">
-              <GraduationCap className="w-10 h-10 text-[#C71585] group-hover:scale-110 transition-transform" />
+              <Image
+                src="/logo.png"
+                alt="Smart Study Center Logo"
+                width={40}
+                height={40}
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold text-gray-900">SMART STUDY CENTER</span>
@@ -58,7 +64,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/register"
+              href="/contact"
               className="px-6 py-2 bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Get Started

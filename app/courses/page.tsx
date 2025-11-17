@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { BookOpen, Clock, Users, Star, Award } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const courses = [
@@ -76,9 +77,8 @@ const courses = [
 export default function CoursesPage() {
   return (
     <main className="min-h-screen pt-20">
-      <section className="py-20 bg-gradient-to-br from-[#f8f9fa] via-[#fff5f8] to-[#f0f4ff] relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#C71585]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <section className="py-20  relative overflow-hidden">
+    
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -103,10 +103,11 @@ export default function CoursesPage() {
                 transition={{ delay: index * 0.1 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl group-hover:shadow-2xl transition-all duration-300"></div>
+                <div className="absolute inset-0  backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl group-hover:shadow-2xl transition-all duration-300"></div>
                 <div className="relative overflow-hidden rounded-2xl">
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
+                    fill
                       src={course.image}
                       alt={course.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -143,16 +144,7 @@ export default function CoursesPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between pt-4">
-                      <div className="text-2xl font-bold text-[#C71585]">{course.price}</div>
-                      <Link
-                        href="#"
-                        className="px-6 py-2 bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center space-x-2"
-                      >
-                        <BookOpen className="w-4 h-4" />
-                        <span>Enroll</span>
-                      </Link>
-                    </div>
+                
                   </div>
                 </div>
               </motion.div>
