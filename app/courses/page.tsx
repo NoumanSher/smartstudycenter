@@ -76,7 +76,7 @@ const courses = [
 
 export default function CoursesPage() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen lg:pt-20 pt-5">
       <section className="py-20  relative overflow-hidden">
     
 

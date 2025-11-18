@@ -44,7 +44,7 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="py-20  relative overflow-hidden">
+    <section className="lg:py-20 py-10  relative overflow-hidden ">
       {/* <div className="absolute top-0 right-0 w-96 h-96 bg-[#C71585]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div> */}
 

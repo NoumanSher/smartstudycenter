@@ -34,7 +34,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="lg:max-w-7xl  lg:mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="relative">
@@ -43,16 +43,16 @@ export default function Navbar() {
                 alt="Smart Study Center Logo"
                 width={40}
                 height={40}
-                className="object-cover"
+                className="object-cover h-14 w-14 group-hover:scale-110 transition-transform duration-300"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900">SMART STUDY CENTER</span>
+              <span className="lg:text-xl text-base font-bold text-gray-900">SMART STUDY CENTER</span>
               <span className="text-xs text-[#C71585] font-semibold">LOVE TO KNOW</span>
             </div>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -73,7 +73,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-700 hover:text-[#C71585] transition-colors"
+            className="lg:hidden text-gray-700 hover:text-[#C71585] transition-colors"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -86,7 +86,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 backdrop-blur-lg shadow-lg"
+            className="lg:hidden bg-white/95 backdrop-blur-lg shadow-lg"
           >
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link, index) => (
@@ -106,7 +106,7 @@ export default function Navbar() {
                 </motion.div>
               ))}
               <Link
-                href="/register"
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="block w-full px-6 py-3 bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white text-center rounded-full font-semibold hover:shadow-lg transition-all"
               >

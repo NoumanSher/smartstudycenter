@@ -282,7 +282,7 @@ export default function ContactPage() {
                     <SelectTrigger className={`bg-white/60 ${errors.gradeLevel ? 'border-red-500' : ''}`}>
                       <SelectValue placeholder="Select your grade level" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className='bg-white'>
                       <SelectItem value="elementary">Elementary (1-5)</SelectItem>
                       <SelectItem value="middle">Middle School (6-8)</SelectItem>
                       <SelectItem value="high">High School (9-12)</SelectItem>
