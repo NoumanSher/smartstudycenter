@@ -45,7 +45,7 @@ export default function HeroAnimation() {
       <AnimatePresence mode="wait">
         <motion.div
           key={currentItem.img + currentItem.text}
-          className="flex flex-col md:flex-row items-center md:justify-center w-full h-fit"
+          className="flex flex-col md:flex-row items-center md:justify-center w-full h-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
