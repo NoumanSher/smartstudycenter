@@ -36,7 +36,7 @@ export default function HeroAnimation() {
 
   return (
     <div
-      className="relative z-10 w-full overflow-hidden flex flex-col h-fit  md:flex-row items-center justify-start"
+      className="relative z-10 w-full overflow-hidden flex flex-col lg:h-[calc(100vh-80px)]  md:flex-row items-center justify-start"
       // style={{ height: `calc(100vh - ${NAVBAR_HEIGHT}px)` }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -89,7 +89,7 @@ export default function HeroAnimation() {
 
       {/* Button - Absolute on Desktop, Flow on Mobile */}
       <motion.div
-        className="hidden lg:block absolute bottom-11 lg:left-[3%] md:left-[7%] xl:left-[10%] rounded-full w-auto md:w-[350px]"
+        className="hidden lg:block absolute bottom-6 lg:left-[3%] md:left-[7%] xl:left-[10%] rounded-full w-auto md:w-[350px]"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
