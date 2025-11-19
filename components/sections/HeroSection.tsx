@@ -89,7 +89,7 @@ export default function HeroAnimation() {
 
       {/* Button - Absolute on Desktop, Flow on Mobile */}
       <motion.div
-        className="hidden md:block absolute bottom-11 lg:left-[3%] md:left-[7%] xl:left-[10%] rounded-full w-auto md:w-[350px]"
+        className="hidden lg:block absolute bottom-11 lg:left-[3%] md:left-[7%] xl:left-[10%] rounded-full w-auto md:w-[350px]"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
