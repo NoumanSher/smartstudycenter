@@ -1,76 +1,89 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { BookOpen, Clock, Users, Star, Award } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { motion } from "framer-motion";
+import { BookOpen, Clock, Users, Star, Award } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const courses = [
   {
-    title: 'Advanced Mathematics',
-    description: 'Master calculus, algebra, and statistics with comprehensive lessons and practice.',
-    image: 'https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=400',
-    level: 'Advanced',
-    duration: '12 weeks',
-    students: '1500+',
+    title: "A Level",
+    description:
+      "Comprehensive preparation for Advanced Level examinations with in-depth subject knowledge.",
+    image:
+      "https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=400",
+    level: "Advanced",
+    duration: "24 weeks",
+    students: "1800+",
     rating: 4.9,
-    price: '$299',
-    category: 'Mathematics',
+    price: "$399",
+    category: "Advanced Level",
   },
   {
-    title: 'Physics Mastery',
-    description: 'Explore classical and modern physics concepts with hands-on experiments.',
-    image: 'https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=400',
-    level: 'Intermediate',
-    duration: '10 weeks',
-    students: '1200+',
+    title: "O Level",
+    description:
+      "Complete Ordinary Level course covering core subjects and exam preparation strategies.",
+    image:
+      "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=400",
+    level: "Intermediate",
+    duration: "20 weeks",
+    students: "2200+",
     rating: 4.8,
-    price: '$279',
-    category: 'Science',
+    price: "$349",
+    category: "Ordinary Level",
   },
+
   {
-    title: 'English Literature',
-    description: 'Develop critical reading and writing skills through classic and contemporary works.',
-    image: 'https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=400',
-    level: 'All Levels',
-    duration: '8 weeks',
-    students: '2000+',
-    rating: 5.0,
-    price: '$249',
-    category: 'Language',
-  },
-  {
-    title: 'Web Development',
-    description: 'Learn HTML, CSS, JavaScript, and modern frameworks from scratch.',
-    image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400',
-    level: 'Beginner',
-    duration: '16 weeks',
-    students: '3000+',
-    rating: 4.9,
-    price: '$399',
-    category: 'Technology',
-  },
-  {
-    title: 'SAT Preparation',
-    description: 'Comprehensive SAT prep with proven strategies and practice tests.',
-    image: 'https://images.pexels.com/photos/5428010/pexels-photo-5428010.jpeg?auto=compress&cs=tinysrgb&w=400',
-    level: 'Test Prep',
-    duration: '6 weeks',
-    students: '2500+',
-    rating: 4.9,
-    price: '$349',
-    category: 'Test Prep',
-  },
-  {
-    title: 'Biology Fundamentals',
-    description: 'Understand living systems, genetics, and ecology through interactive lessons.',
-    image: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=400',
-    level: 'Intermediate',
-    duration: '10 weeks',
-    students: '1800+',
+    title: "Intermediate",
+    description:
+      "Intermediate level education covering pre-engineering, pre-medical, and commerce streams.",
+    image:
+      "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400",
+    level: "Intermediate",
+    duration: "32 weeks",
+    students: "2800+",
     rating: 4.8,
-    price: '$289',
-    category: 'Science',
+    price: "$449",
+    category: "Intermediate Education",
+  },
+  {
+    title: "Matric",
+    description:
+      "Matriculation level courses covering all major subjects with board exam focus.",
+    image:
+      "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=400",
+    level: "Intermediate",
+    duration: "18 weeks",
+    students: "3500+",
+    rating: 4.7,
+    price: "$299",
+    category: "Matriculation",
+  },
+  {
+    title: "Juniors",
+    description:
+      "Foundational courses for junior students building strong academic basics.",
+    image:
+      "https://images.pexels.com/photos/5428010/pexels-photo-5428010.jpeg?auto=compress&cs=tinysrgb&w=400",
+    level: "Beginner",
+    duration: "15 weeks",
+    students: "4200+",
+    rating: 4.9,
+    price: "$199",
+    category: "Junior Level",
+  },
+  {
+    title: "Entry Test",
+    description:
+      "Specialized preparation for university and college entrance examinations.",
+    image:
+      "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=400",
+    level: "Advanced",
+    duration: "8 weeks",
+    students: "5000+",
+    rating: 4.9,
+    price: "$279",
+    category: "Test Preparation",
   },
 ];
 
@@ -78,8 +91,6 @@ export default function CoursesPage() {
   return (
     <main className="min-h-screen lg:pt-20 pt-5">
       <section className="py-20  relative overflow-hidden">
-    
-
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +101,8 @@ export default function CoursesPage() {
               Our <span className="text-[#C71585]">Courses</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our comprehensive catalog of courses designed to help you achieve your academic goals.
+              Explore our comprehensive catalog of courses designed to help you
+              achieve your academic goals.
             </p>
           </motion.div>
 
@@ -107,7 +119,7 @@ export default function CoursesPage() {
                 <div className="relative overflow-hidden rounded-2xl">
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                    fill
+                      fill
                       src={course.image}
                       alt={course.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -124,12 +136,18 @@ export default function CoursesPage() {
                       </span>
                       <div className="flex items-center space-x-1">
                         <Star className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                        <span className="text-sm font-semibold">{course.rating}</span>
+                        <span className="text-sm font-semibold">
+                          {course.rating}
+                        </span>
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900">{course.title}</h3>
-                    <p className="text-gray-600 text-sm">{course.description}</p>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {course.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {course.description}
+                    </p>
 
                     <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                       <div className="flex items-center space-x-4 text-sm text-gray-600">
@@ -143,8 +161,6 @@ export default function CoursesPage() {
                         </div>
                       </div>
                     </div>
-
-                
                   </div>
                 </div>
               </motion.div>

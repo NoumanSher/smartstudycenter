@@ -8,9 +8,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://smartstudycenter.com'),
-  title: 'Smart Study Center - Online Classes for 8th to O-Levels | Expert Mentorship',
-  description: 'Quality online education for classes 8th through O-Levels. Expert mentors, personalized learning, and proven results. Join thousands of successful students in regions without access to quality physical classes.',
-  keywords: 'online classes 8th grade, O-Levels online courses, online tutoring Pakistan, distance learning education, virtual classes, home tuition online, 9th 10th 11th 12th online classes, O-Levels preparation, online mentorship',
+  title: 'Smart Study Center - Online Classes for 8th to A-Levels Pakistan school system in Saudi Arabia  | Expert Mentorship',
+  description: 'Quality online education for classes 8th through A-Levels. Expert mentors, personalized learning, and proven results. Join thousands of successful students in regions without access to quality physical classes.',
+  keywords: 'online classes 8th grade, Pakistan School System, Love to know,Pakistan school system in Saudi Arabia, A-Levels online courses, online tutoring Pakistan, distance learning education, virtual classes, home tuition online, 9th 10th 11th 12th online classes, A-Levels preparation, online mentorship',
   authors: [{ name: 'Smart Study Center' }],
   creator: 'Blaze Logic',
   publisher: 'Smart Study Center',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://smartstudycenter.com',
-    title: 'Smart Study Center - Online Classes for 8th to O-Levels',
-    description: 'Expert online education with personalized mentorship for classes 8th through O-Levels. Accessible to students everywhere.',
+    title: 'Smart Study Center - Online Classes for 8th to A-Levels',
+    description: 'Expert online education with personalized mentorship for classes 8th through A-Levels. Accessible to students everywhere.',
     siteName: 'Smart Study Center',
     images: [
       {
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Smart Study Center - Online Classes for 8th to O-Levels',
-    description: 'Expert online education with personalized mentorship for classes 8th through O-Levels.',
+    title: 'Smart Study Center - Online Classes for 8th to A-Levels',
+    description: 'Expert online education with personalized mentorship for classes 8th through A-Levels.',
     images: ['/logo.png'],
   },
   alternates: {

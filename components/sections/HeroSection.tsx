@@ -8,9 +8,12 @@ interface HeroItem {
 }
 
 const heroData: HeroItem[] = [
-  { img: "h4.webp", text: "Study Abroad With Confidence" },
-  { img: "h5.webp", text: "Connect With Global Mentors" },
-  { img: "h6.webp", text: "Achieve Your Academic Dreams" },
+  { img: "h4.webp", text: "Focusing on creative and critical thinking" },
+
+  { img: "h2.png", text: "Developing logical reasoning" },
+  { img: "h6.webp", text: "Improving quantitative reasoning" },
+  { img: "h6.webp", text: "Refining linguistic and communication skills" },
+  { img: "h6.webp", text: " Concentrating on personal development" },
 ];
 
 // const NAVBAR_HEIGHT = 80; // px
