@@ -7,13 +7,13 @@ interface HeroItem {
   text: string;
 }
 
+// Use absolute paths for public assets so preloading and <img> tags resolve properly
 const heroData: HeroItem[] = [
-  { img: "h4.webp", text: "Focusing on creative and critical thinking" },
-
-  { img: "h2.png", text: "Developing logical reasoning" },
-  { img: "h6.webp", text: "Improving quantitative reasoning" },
-  { img: "h6.webp", text: "Refining linguistic and communication skills" },
-  { img: "h6.webp", text: " Concentrating on personal development" },
+  { img: "/h4.webp", text: "Focusing on creative and critical thinking" },
+  { img: "/h2.png", text: "Developing logical reasoning" },
+  { img: "/h6.webp", text: "Improving quantitative reasoning" },
+  { img: "/h6.webp", text: "Refining linguistic and communication skills" },
+  { img: "/h6.webp", text: " Concentrating on personal development" },
 ];
 
 // const NAVBAR_HEIGHT = 80; // px
@@ -35,11 +35,55 @@ export default function HeroAnimation() {
     return () => clearInterval(cycle);
   }, [isPaused]);
 
+  // Preload hero images to improve the perceived speed of transitions and ensure they're cached
+  useEffect(() => {
+    let mounted = true;
+    const imageObjects: HTMLImageElement[] = [];
+
+    const preloadImage = (src: string) => {
+      // Avoid duplicate preloads
+      if (imageObjects.some((i) => i.src === src)) return;
+      const img = new Image();
+      img.src = src;
+      imageObjects.push(img);
+      return img;
+    };
+
+    try {
+      // Preload all hero images
+      heroData.forEach((item) => preloadImage(item.img));
+
+      // Optionally, add preload <link> tags for the first 1-2 images to hint the browser
+      // (this helps for LCP-critical images or the very first hero image)
+      const firstImages = heroData.slice(0, 2).map((i) => i.img);
+      firstImages.forEach((href) => {
+        if (!document) return;
+        // Avoid adding duplicates
+        if (document.querySelector(`link[rel="preload"][href="${href}"]`)) return;
+        const link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "image";
+        link.href = href;
+        document.head.appendChild(link);
+      });
+    } catch (err) {
+      // swallow errors — preloading should be non-blocking
+      // eslint-disable-next-line no-console
+      console.warn("Hero image preload failed", err);
+    }
+
+    return () => {
+      mounted = false;
+      // Allow garbage collection by clearing references (best-effort cleanup)
+      imageObjects.length = 0;
+    };
+  }, []);
+
   const currentItem = heroData[currentIndex];
 
   return (
     <div
-      className="relative z-10 w-full overflow-hidden flex flex-col lg:h-[calc(100vh-80px)]  md:flex-row items-center justify-start"
+      className="relative z-10 w-full overflow-hidden flex flex-col  lg:h-[calc(100vh-80px)]  md:flex-row items-center justify-start"
       // style={{ height: `calc(100vh - ${NAVBAR_HEIGHT}px)` }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -57,13 +101,13 @@ export default function HeroAnimation() {
           {/* Left Side — Text Section */}
           <div className="md:w-1/2 self-start w-full mt-10">
             <div className="w-full flex items-center justify-start md:justify-start xl:pl-28 xl:pr-8 text-start lg:mt-28 ">
-              <div className="flex items-stretch">
+              <div className="flex items-stretch w-full">
                 {/* Red vertical line */}
                 <div className="bg-[#C71585] w-1.5 md:w-3"></div>
 
                 {/* Sliding text */}
                 <motion.p
-                  className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-800 flex flex-wrap max-w-full  md:pl-6"
+                  className="break-words pr-4 text-2xl sm:text-3xl   md:text-5xl lg:text-6xl font-semibold text-gray-800 w-full  md:pl-6"
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 25, opacity: 1 }}
                   transition={{ delay: 1.5, duration: 1.2, ease: "easeOut" }}
@@ -92,7 +136,7 @@ export default function HeroAnimation() {
 
       {/* Button - Absolute on Desktop, Flow on Mobile */}
       <motion.div
-        className="hidden lg:block absolute bottom-6 lg:left-[3%] md:left-[7%] xl:left-[10%] rounded-full w-auto md:w-[350px]"
+        className="hidden md:block absolute bottom-6 lg:left-[3%] md:left-[7%] xl:left-[10%] rounded-full w-auto md:w-[350px]"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
@@ -108,7 +152,7 @@ export default function HeroAnimation() {
 
       {/* Button - Mobile Flow (Below Image) */}
       <motion.div
-        className="lg:hidden w-full px-4 pt-4 flex justify-center"
+        className="md:hidden  w-full px-4 pt-4 flex justify-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
