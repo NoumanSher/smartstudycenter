@@ -13,7 +13,7 @@ const heroData: HeroItem[] = [
   { img: "/h2.png", text: "Developing logical reasoning" },
   { img: "/h6.webp", text: "Improving quantitative reasoning" },
   { img: "/h6.webp", text: "Refining linguistic and communication skills" },
-  { img: "/h6.webp", text: " Concentrating on personal development" },
+  { img: "/h6.webp", text: "Concentrating on personal development" },
 ];
 
 // const NAVBAR_HEIGHT = 80; // px
@@ -107,7 +107,7 @@ export default function HeroAnimation() {
 
                 {/* Sliding text */}
                 <motion.p
-                  className="break-words pr-4 text-2xl sm:text-3xl   md:text-5xl lg:text-6xl font-semibold text-gray-800 w-full  md:pl-6"
+                  className="break-words pr-7 lg:pr-0  text-2xl sm:text-3xl   md:text-5xl lg:text-6xl font-semibold text-gray-800 w-full  md:pl-6"
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 25, opacity: 1 }}
                   transition={{ delay: 1.5, duration: 1.2, ease: "easeOut" }}
