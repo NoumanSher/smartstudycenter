@@ -22,4 +22,4 @@ Disallow: /api/
 Disallow: /*.json$
 
 # Sitemap location
-Sitemap: https://smartstudycenter.com/sitemap.xml
+Sitemap: https://www.smartstudycenter.com/sitemap.xml

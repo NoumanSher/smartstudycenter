@@ -6,29 +6,29 @@ import Image from 'next/image';
 
 const mentors = [
   {
-    name: 'Dr. Sarah Williams',
+    name: 'Murad Ameen',
     title: 'Mathematics Expert',
-    image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/m1.png',
     specialization: 'Advanced Calculus & Statistics',
     experience: '15+ years',
     students: '2500+',
     rating: 4.9,
-    bio: 'PhD in Mathematics with a passion for making complex concepts simple and accessible.',
+    bio: 'MPhil in Mathematics with a passion for making complex concepts simple and accessible.',
   },
   {
-    name: 'Prof. Michael Chen',
-    title: 'Science Specialist',
-    image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400',
-    specialization: 'Physics & Chemistry',
+    name: 'Rehman Ameen',
+    title: 'Physics Specialist',
+    image: '/m4.png',
+    specialization: 'Physics & Mechanical Engineer',
     experience: '12+ years',
     students: '2000+',
     rating: 4.8,
     bio: 'Former university professor dedicated to inspiring the next generation of scientists.',
   },
   {
-    name: 'Emily Rodriguez',
+    name: 'Rojer Anwer',
     title: 'English Literature',
-    image: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/m2.png',
     specialization: 'Creative Writing & Grammar',
     experience: '10+ years',
     students: '1800+',
@@ -36,35 +36,35 @@ const mentors = [
     bio: 'Published author and educator helping students develop strong communication skills.',
   },
   {
-    name: 'David Thompson',
-    title: 'Computer Science',
-    image: 'https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=400',
-    specialization: 'Programming & Web Development',
+    name: 'Mehreen Khan',
+    title: 'Instructor Management Sciences',
+    image: '/m3.png',
+    specialization: 'MBA Finance & MS Management',
     experience: '8+ years',
     students: '1500+',
     rating: 4.9,
-    bio: 'Software engineer turned educator, making coding accessible and fun for everyone.',
+    bio: 'MPhil and MBA qualified educator, blending technical expertise with management insights.',
   },
-  {
-    name: 'Priya Sharma',
-    title: 'Test Preparation',
-    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
-    specialization: 'SAT, ACT & Entrance Exams',
-    experience: '9+ years',
-    students: '2200+',
-    rating: 4.9,
-    bio: 'Specializing in test strategies and helping students achieve their target scores.',
-  },
-  {
-    name: 'James Wilson',
-    title: 'Biology Expert',
-    image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400',
-    specialization: 'Molecular Biology & Genetics',
-    experience: '11+ years',
-    students: '1900+',
-    rating: 4.8,
-    bio: 'Research scientist with extensive experience in making biology engaging and relevant.',
-  },
+  // {
+  //   name: 'Priya Sharma',
+  //   title: 'Test Preparation',
+  //   image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
+  //   specialization: 'SAT, ACT & Entrance Exams',
+  //   experience: '9+ years',
+  //   students: '2200+',
+  //   rating: 4.9,
+  //   bio: 'Specializing in test strategies and helping students achieve their target scores.',
+  // },
+  // {
+  //   name: 'James Wilson',
+  //   title: 'Biology Expert',
+  //   image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400',
+  //   specialization: 'Molecular Biology & Genetics',
+  //   experience: '11+ years',
+  //   students: '1900+',
+  //   rating: 4.8,
+  //   bio: 'Research scientist with extensive experience in making biology engaging and relevant.',
+  // },
 ];
 
 export default function MentorsPage() {
@@ -101,7 +101,7 @@ export default function MentorsPage() {
                 <div className="relative p-8 space-y-4">
                   <div className="relative w-32 h-32 mx-auto">
                     <Image
-                    fill
+                      fill
                       src={mentor.image}
                       alt={mentor.name}
                       className="w-full h-full rounded-full object-cover border-4 border-[#C71585] group-hover:scale-110 transition-transform duration-300"
@@ -141,7 +141,7 @@ export default function MentorsPage() {
                     <span>{mentor.experience} Experience</span>
                   </div>
 
-              
+
                 </div>
               </motion.div>
             ))}

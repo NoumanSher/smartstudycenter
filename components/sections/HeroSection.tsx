@@ -1,5 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface HeroItem {
@@ -35,49 +36,7 @@ export default function HeroAnimation() {
     return () => clearInterval(cycle);
   }, [isPaused]);
 
-  // Preload hero images to improve the perceived speed of transitions and ensure they're cached
-  useEffect(() => {
-    let mounted = true;
-    const imageObjects: HTMLImageElement[] = [];
-
-    const preloadImage = (src: string) => {
-      // Avoid duplicate preloads
-      if (imageObjects.some((i) => i.src === src)) return;
-      const img = new Image();
-      img.src = src;
-      imageObjects.push(img);
-      return img;
-    };
-
-    try {
-      // Preload all hero images
-      heroData.forEach((item) => preloadImage(item.img));
-
-      // Optionally, add preload <link> tags for the first 1-2 images to hint the browser
-      // (this helps for LCP-critical images or the very first hero image)
-      const firstImages = heroData.slice(0, 2).map((i) => i.img);
-      firstImages.forEach((href) => {
-        if (!document) return;
-        // Avoid adding duplicates
-        if (document.querySelector(`link[rel="preload"][href="${href}"]`)) return;
-        const link = document.createElement("link");
-        link.rel = "preload";
-        link.as = "image";
-        link.href = href;
-        document.head.appendChild(link);
-      });
-    } catch (err) {
-      // swallow errors — preloading should be non-blocking
-      // eslint-disable-next-line no-console
-      console.warn("Hero image preload failed", err);
-    }
-
-    return () => {
-      mounted = false;
-      // Allow garbage collection by clearing references (best-effort cleanup)
-      imageObjects.length = 0;
-    };
-  }, []);
+  // Preloading is handled automatically by next/image with priority prop
 
   const currentItem = heroData[currentIndex];
 
@@ -119,17 +78,24 @@ export default function HeroAnimation() {
           </div>
 
           {/* Right Side — Image Section */}
-          <div className="md:w-1/2 w-full flex justify-center items-center md:mt-0">
-            <motion.img
+          <div className="md:w-1/2 w-full h-full flex justify-center items-center md:mt-0">
+            <motion.div
               key={currentItem.img}
-              src={currentItem.img}
-              alt={currentItem.text}
-              className="w-full h-auto md:h-full object-contain max-h-96 md:max-h-full"
+              className="relative w-full h-96 md:h-[500px] lg:h-full flex justify-center items-center"
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 40, opacity: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-            />
+            >
+              <Image
+                src={currentItem.img}
+                alt={currentItem.text}
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>

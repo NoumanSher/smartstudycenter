@@ -4,9 +4,9 @@ export const organizationSchema = {
   '@type': 'EducationalOrganization',
   name: 'Smart Study Center',
   description: 'Online education platform for classes 8th through O-Levels with expert mentorship',
-  url: 'https://smartstudycenter.com',
-  logo: 'https://smartstudycenter.com/logo.png',
-  image: 'https://smartstudycenter.com/logo.png',
+  url: 'https://www.smartstudycenter.com',
+  logo: 'https://www.smartstudycenter.com/logo.png',
+  image: 'https://www.smartstudycenter.com/logo.png',
   sameAs: [
     'https://facebook.com/smartstudycenter',
     'https://twitter.com/smartstudycenter',
@@ -43,7 +43,7 @@ export const courseSchema = (course: {
   provider: {
     '@type': 'EducationalOrganization',
     name: 'Smart Study Center',
-    url: 'https://smartstudycenter.com',
+    url: 'https://www.smartstudycenter.com',
   },
   aggregateRating: {
     '@type': 'AggregateRating',

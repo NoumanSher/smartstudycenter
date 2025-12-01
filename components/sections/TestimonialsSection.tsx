@@ -8,44 +8,51 @@ import { useState } from 'react';
 const testimonials = [
   {
     name: 'Muhammad Ghous',
-    role: 'High School Student',
-    image: 's1.jpg',
+    role: 'College Student',
+    image: '/s1.jpg',
     content: 'Smart Study Center transformed my learning experience. The personalized approach and expert mentors helped me improve my grades significantly!',
     rating: 5,
   },
   {
     name: 'Ammar bin Ashraf',
     role: 'College Student',
-    image: 's2.jpg',
+    image: '/s2.jpg',
     content: 'The flexibility and quality of courses are outstanding. I can learn at my own pace while getting the support I need to excel.',
     rating: 5,
   },
   {
     name: 'Maham Rauf',
-    role: 'Parent',
-    image: 's3.jpg',
+    role: 'College Student',
+    image: '/s3.jpg',
     content: 'As a parent, I am thrilled with the progress my daughter has made. The mentors are caring, and the platform is user-friendly.',
     rating: 5,
   },
   {
     name: 'Saqlain Hayat',
-    role: 'Graduate Student',
-    image: 's4.jpg',
+    role: 'College Student',
+    image: '/s4.jpg',
     content: 'The live classes and interactive sessions make learning engaging. I have achieved my academic goals thanks to Smart Study!',
     rating: 5,
   },
   {
     name: 'Nouman Khan',
-    role: 'Test Prep Student',
-    image: 's5.png',
+    role: 'College Student',
+    image: '/s5.png',
     content: 'Excellent test preparation resources and mentorship. I scored in the top 5% on my entrance exams!',
     rating: 5,
   },
   {
-    name: 'James Wilson',
-    role: 'Engineering Student',
-    image: 'https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=200',
+    name: 'Anas',
+    role: 'High School Student (Saudi Arabia)',
+    image: '/s6.png',
     content: 'The comprehensive curriculum and expert guidance helped me master complex subjects with ease.',
+    rating: 5,
+  },
+  {
+    name: 'Bilal',
+    role: 'High School Student (Saudi Arabia)',
+    image: '/s7.png',
+    content: 'The structured curriculum and expert mentorship made mastering complex subjects much easier for me.',
     rating: 5,
   },
 ];
@@ -85,9 +92,8 @@ export default function TestimonialsSection() {
               onHoverEnd={() => setHoveredIndex(null)}
               className="relative group"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl transition-all duration-300 ${
-                hoveredIndex === index ? 'scale-105' : ''
-              }`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl transition-all duration-300 ${hoveredIndex === index ? 'scale-105' : ''
+                }`}></div>
               <div className="relative p-8 space-y-4">
                 <Quote className="w-10 h-10 text-[#C71585] opacity-50" />
 
