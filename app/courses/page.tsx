@@ -26,7 +26,7 @@ const courses = [
     image:
       "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=400",
     level: "Intermediate",
-    duration: "20 weeks",
+    duration: "24 weeks",
     students: "2200+",
     rating: 4.8,
     price: "$349",
@@ -40,7 +40,7 @@ const courses = [
     image:
       "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400",
     level: "Intermediate",
-    duration: "32 weeks",
+    duration: "24 weeks",
     students: "2800+",
     rating: 4.8,
     price: "$449",
@@ -53,7 +53,7 @@ const courses = [
     image:
       "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=400",
     level: "Intermediate",
-    duration: "18 weeks",
+    duration: "24 weeks",
     students: "3500+",
     rating: 4.7,
     price: "$299",
@@ -66,7 +66,7 @@ const courses = [
     image:
       "https://images.pexels.com/photos/5428010/pexels-photo-5428010.jpeg?auto=compress&cs=tinysrgb&w=400",
     level: "Beginner",
-    duration: "15 weeks",
+    duration: "24 weeks",
     students: "4200+",
     rating: 4.9,
     price: "$199",

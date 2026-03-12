@@ -26,16 +26,12 @@ const faqs = [
   },
   {
     question: 'What subjects and courses are available?',
-    answer: 'We offer a wide range of courses including Mathematics, Science, English, Programming, Test Preparation, and many more. Our catalog is constantly expanding to meet student needs.',
+    answer: 'We offer a wide range of short courses including Mathematics, Science, English, Programming, Test Preparation, and many more. Our catalog is constantly expanding to meet student needs.',
   },
   {
     question: 'Is there a mobile app available?',
-    answer: 'Yes, our mobile app is available for both iOS and Android devices, allowing you to learn on the go with full access to all course materials and live classes.',
-  },
-  {
-    question: 'How can I track my progress?',
-    answer: 'Our platform features a comprehensive dashboard where you can track your course progress, view grades, monitor assignment deadlines, and see detailed analytics of your performance.',
-  },
+    answer: 'Coming soon , We are working on a mobile app to provide you with the best learning experience on the go. Stay tuned for updates!',
+  }
 ];
 
 export default function FAQSection() {

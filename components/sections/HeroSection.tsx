@@ -10,11 +10,11 @@ interface HeroItem {
 
 // Use absolute paths for public assets so preloading and <img> tags resolve properly
 const heroData: HeroItem[] = [
-  { img: "/h4.webp", text: "Focusing on creative and critical thinking" },
-  { img: "/h2.png", text: "Developing logical reasoning" },
-  { img: "/h6.webp", text: "Improving quantitative reasoning" },
-  { img: "/h6.webp", text: "Refining linguistic and communication skills" },
-  { img: "/h6.webp", text: "Concentrating on personal development" },
+  { img: "/first.png", text: "Focusing on creative and critical thinking" },
+  { img: "/son.png", text: "Developing logical reasoning" },
+  { img: "/first.png", text: "Improving quantitative reasoning" },
+  { img: "/first.png", text: "Refining linguistic and communication skills" },
+  { img: "/first.png", text: "Concentrating on personal development" },
 ];
 
 // const NAVBAR_HEIGHT = 80; // px

@@ -1,70 +1,69 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Star, Award, BookOpen, Users, Linkedin, Twitter, Mail } from 'lucide-react';
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import {
+  Star,
+  Award,
+  BookOpen,
+  Users,
+  Linkedin,
+  Twitter,
+  Mail,
+} from "lucide-react";
+import Image from "next/image";
 
 const mentors = [
   {
-    name: 'Murad Ameen',
-    title: 'Mathematics Expert',
-    image: '/m1.png',
-    specialization: 'Advanced Calculus & Statistics',
-    experience: '15+ years',
-    students: '2500+',
+    name: "Murad Ameen",
+    title: "Mathematics Expert",
+    image: "/m1.png",
+    specialization: "Advanced Calculus & Statistics",
+    experience: "15+ years",
+    students: "2500+",
     rating: 4.9,
-    bio: 'MPhil in Mathematics with a passion for making complex concepts simple and accessible.',
+    bio: "MPhil in Mathematics with a passion for making complex concepts simple and accessible.",
   },
   {
-    name: 'Rehman Ameen',
-    title: 'Physics Specialist',
-    image: '/m4.png',
-    specialization: 'Physics & Mechanical Engineer',
-    experience: '12+ years',
-    students: '2000+',
+    name: "Rehman Ameen",
+    title: "Physics Specialist",
+    image: "/m4.png",
+    specialization: "Physics & Mechanical Engineer",
+    experience: "12+ years",
+    students: "2000+",
     rating: 4.8,
-    bio: 'Former university professor dedicated to inspiring the next generation of scientists.',
+    bio: "Former university professor dedicated to inspiring the next generation of scientists.",
   },
   {
-    name: 'Rojer Anwer',
-    title: 'English Literature',
-    image: '/m2.png',
-    specialization: 'Creative Writing & Grammar',
-    experience: '10+ years',
-    students: '1800+',
+    name: "Rogar Anwer",
+    title: "English Literature",
+    image: "/m2.png",
+    specialization: "Creative Writing & Grammar",
+    experience: "10+ years",
+    students: "1800+",
     rating: 5.0,
-    bio: 'Published author and educator helping students develop strong communication skills.',
+    bio: "Published author and educator helping students develop strong communication skills.",
   },
   {
-    name: 'Mehreen Khan',
-    title: 'Instructor Management Sciences',
-    image: '/m3.png',
-    specialization: 'MBA Finance & MS Management',
-    experience: '8+ years',
-    students: '1500+',
+    name: "Dr Jamshed Nasir",
+    title: "Instructor of Statistics & Management Sciences",
+    image: "/sir.jpeg",
+    specialization: "Statistics Expert",
+    experience: "15+ years",
+    students: "1500+",
     rating: 4.9,
-    bio: 'MPhil and MBA qualified educator, blending technical expertise with management insights.',
+    bio: "MPhil and MBA qualified educator specializing in Statistics, helping students master data analysis, probability, and quantitative methods with practical insights.",
   },
-  // {
-  //   name: 'Priya Sharma',
-  //   title: 'Test Preparation',
-  //   image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
-  //   specialization: 'SAT, ACT & Entrance Exams',
-  //   experience: '9+ years',
-  //   students: '2200+',
-  //   rating: 4.9,
-  //   bio: 'Specializing in test strategies and helping students achieve their target scores.',
-  // },
-  // {
-  //   name: 'James Wilson',
-  //   title: 'Biology Expert',
-  //   image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400',
-  //   specialization: 'Molecular Biology & Genetics',
-  //   experience: '11+ years',
-  //   students: '1900+',
-  //   rating: 4.8,
-  //   bio: 'Research scientist with extensive experience in making biology engaging and relevant.',
-  // },
+  {
+    name: "Mehreen Khan",
+    title: "Instructor Management Sciences",
+    image: "/meh.png",
+    specialization: "MBA Finance & MS Management",
+    experience: "8+ years",
+    students: "1500+",
+    rating: 4.9,
+    bio: "MPhil and MBA qualified educator, blending technical expertise with management insights.",
+  },
+
 ];
 
 export default function MentorsPage() {
@@ -84,7 +83,8 @@ export default function MentorsPage() {
               Meet Our <span className="text-[#C71585]">Expert Mentors</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Learn from passionate educators who are committed to your success and growth.
+              Learn from passionate educators who are committed to your success
+              and growth.
             </p>
           </motion.div>
 
@@ -112,25 +112,37 @@ export default function MentorsPage() {
                   </div>
 
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold text-gray-900">{mentor.name}</h3>
-                    <p className="text-[#C71585] font-semibold">{mentor.title}</p>
-                    <p className="text-sm text-gray-600 mt-2">{mentor.specialization}</p>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      {mentor.name}
+                    </h3>
+                    <p className="text-[#C71585] font-semibold">
+                      {mentor.title}
+                    </p>
+                    <p className="text-sm text-gray-600 mt-2">
+                      {mentor.specialization}
+                    </p>
                   </div>
 
-                  <p className="text-gray-700 text-sm text-center">{mentor.bio}</p>
+                  <p className="text-gray-700 text-sm text-center">
+                    {mentor.bio}
+                  </p>
 
                   <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-1 text-[#FFD700]">
                         <Star className="w-4 h-4 fill-current" />
-                        <span className="font-bold text-gray-900">{mentor.rating}</span>
+                        <span className="font-bold text-gray-900">
+                          {mentor.rating}
+                        </span>
                       </div>
                       <p className="text-xs text-gray-600">Rating</p>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-1">
                         <Users className="w-4 h-4 text-[#C71585]" />
-                        <span className="font-bold text-gray-900">{mentor.students}</span>
+                        <span className="font-bold text-gray-900">
+                          {mentor.students}
+                        </span>
                       </div>
                       <p className="text-xs text-gray-600">Students</p>
                     </div>
@@ -140,8 +152,6 @@ export default function MentorsPage() {
                     <BookOpen className="w-4 h-4" />
                     <span>{mentor.experience} Experience</span>
                   </div>
-
-
                 </div>
               </motion.div>
             ))}

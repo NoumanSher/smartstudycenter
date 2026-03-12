@@ -1,58 +1,65 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
-import Image from 'next/image';
-import { useState } from 'react';
+import { motion } from "framer-motion";
+import { Star, Quote } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 const testimonials = [
   {
-    name: 'Muhammad Ghous',
-    role: 'College Student',
-    image: '/s1.jpg',
-    content: 'Smart Study Center transformed my learning experience. The personalized approach and expert mentors helped me improve my grades significantly!',
+    name: "Muhammad Ghous",
+    role: "College Student",
+    image: "/s1.jpg",
+    content:
+      "Smart Study Center transformed my learning experience. The personalized approach and expert mentors helped me improve my grades significantly!",
     rating: 5,
   },
   {
-    name: 'Ammar bin Ashraf',
-    role: 'College Student',
-    image: '/s2.jpg',
-    content: 'The flexibility and quality of courses are outstanding. I can learn at my own pace while getting the support I need to excel.',
+    name: "Ammar bin Ashraf",
+    role: "College Student",
+    image: "/s2.jpg",
+    content:
+      "As a hardware and software professional trained at Smart Study Center, I gained strong technical foundations, practical problem-solving skills, and industry-relevant knowledge for my career.",
     rating: 5,
   },
   {
-    name: 'Maham Rauf',
-    role: 'College Student',
-    image: '/s3.jpg',
-    content: 'As a parent, I am thrilled with the progress my daughter has made. The mentors are caring, and the platform is user-friendly.',
+    name: "Maham Rauf",
+    role: "College Student",
+    image: "/s3.jpg",
+    content:
+      "Administrative processes are smooth and student-focused, ensuring timely support and clear communication. Smart Study Center emphasis on values, discipline, and innovation fosters a culture of continuous improvement.",
     rating: 5,
   },
   {
-    name: 'Saqlain Hayat',
-    role: 'College Student',
-    image: '/s4.jpg',
-    content: 'The live classes and interactive sessions make learning engaging. I have achieved my academic goals thanks to Smart Study!',
+    name: "Saqlain Hayat",
+    role: "College Student",
+    image: "/s4.jpg",
+    content:
+      "As a chemical engineer, I appreciate Smart Study Center’s focus on analytical thinking, problem-solving skills, and strong academic guidance for students.",
     rating: 5,
   },
   {
-    name: 'Nouman Khan',
-    role: 'College Student',
-    image: '/s5.png',
-    content: 'Excellent test preparation resources and mentorship. I scored in the top 5% on my entrance exams!',
+    name: "Nouman Khan",
+    role: "College Student",
+    image: "/s5.png",
+    content:
+      "As a software engineer trained at Smart Study Center, I developed strong programming fundamentals, logical thinking, and practical skills that greatly improved my professional growth.",
     rating: 5,
   },
   {
-    name: 'Anas',
-    role: 'High School Student (Saudi Arabia)',
-    image: '/s6.png',
-    content: 'The comprehensive curriculum and expert guidance helped me master complex subjects with ease.',
+    name: "Anas",
+    role: "High School Student (Saudi Arabia)",
+    image: "/s6.png",
+    content:
+      "The comprehensive curriculum and expert guidance helped me master complex subjects with ease.",
     rating: 5,
   },
   {
-    name: 'Bilal',
-    role: 'High School Student (Saudi Arabia)',
-    image: '/s7.png',
-    content: 'The structured curriculum and expert mentorship made mastering complex subjects much easier for me.',
+    name: "Bilal",
+    role: "High School Student (Saudi Arabia)",
+    image: "/s7.png",
+    content:
+      "The structured curriculum and expert mentorship made mastering complex subjects much easier for me.",
     rating: 5,
   },
 ];
@@ -76,7 +83,8 @@ export default function TestimonialsSection() {
             What Our <span className="text-[#C71585]">Students Say</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Real stories from students who have achieved their dreams with Smart Study Center.
+            Real stories from students who have achieved their dreams with Smart
+            Study Center.
           </p>
         </motion.div>
 
@@ -92,16 +100,24 @@ export default function TestimonialsSection() {
               onHoverEnd={() => setHoveredIndex(null)}
               className="relative group"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl transition-all duration-300 ${hoveredIndex === index ? 'scale-105' : ''
-                }`}></div>
+              <div
+                className={`absolute inset-0 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl transition-all duration-300 ${
+                  hoveredIndex === index ? "scale-105" : ""
+                }`}
+              ></div>
               <div className="relative p-8 space-y-4">
                 <Quote className="w-10 h-10 text-[#C71585] opacity-50" />
 
-                <p className="text-gray-700 leading-relaxed">{testimonial.content}</p>
+                <p className="text-gray-700 leading-relaxed">
+                  {testimonial.content}
+                </p>
 
                 <div className="flex space-x-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-[#FFD700] text-[#FFD700]" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-[#FFD700] text-[#FFD700]"
+                    />
                   ))}
                 </div>
 
@@ -114,7 +130,9 @@ export default function TestimonialsSection() {
                     className="w-12 h-12 rounded-full object-cover border-2 border-[#C71585]"
                   />
                   <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                    <h4 className="font-semibold text-gray-900">
+                      {testimonial.name}
+                    </h4>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>

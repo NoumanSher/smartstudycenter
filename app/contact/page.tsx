@@ -169,7 +169,7 @@ export default function ContactPage() {
 
                 <div className="space-y-6">
                   {[
-                    { icon: MapPin, title: 'Our Location', content: '123 Education Street, Learning City, 12345' },
+                    { icon: MapPin, title: 'Our Location', content: 'Lahore , Pakistan' },
                     { icon: Phone, title: 'Phone Number', content: '+1 (555) 123-4567' },
                     { icon: Mail, title: 'Email Address', content: 'info@smartstudy.com' },
                     { icon: Clock, title: 'Working Hours', content: 'Mon - Fri: 9:00 AM - 6:00 PM' },
