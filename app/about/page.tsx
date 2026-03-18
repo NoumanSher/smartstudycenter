@@ -67,9 +67,10 @@ export default function AboutPage() {
                   width={300}
                   height={300}
                   priority
+                  quality={100}
                   src="/logo.png"
                   alt="About Us"
-                  className="w-full h-auto rounded-2xl shadow-xl"
+                  className="w-full h-auto rounded-2xl shadow-xl object-contain"
                 />
               </div>
             </motion.div>

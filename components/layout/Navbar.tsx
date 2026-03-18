@@ -41,9 +41,11 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="Smart Study Center Logo"
-                width={40}
-                height={40}
-                className="object-cover h-14 w-14 group-hover:scale-110 transition-transform duration-300"
+                width={120}
+                height={120}
+                priority
+                quality={100}
+                className="object-contain h-14 w-14 group-hover:scale-110 transition-transform duration-300"
               />
             </div>
             <div className="flex flex-col">

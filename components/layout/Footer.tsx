@@ -16,7 +16,7 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex justify-center md:justify-start items-center gap-3 mb-4">
-            <Image src="/logo.png" alt="Smart Study Center Logo" className="-mt-12" width={200} height={200} />
+            <Image src="/logo.png" alt="Smart Study Center Logo" className="-mt-12 object-contain" width={200} height={200} quality={100} priority />
             <h2 className="text-xl font-bold text-white">Smart Study Center</h2>
           </div>
           <p className="text-gray-900 text-sm">
