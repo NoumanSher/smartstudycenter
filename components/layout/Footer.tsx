@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -47,10 +47,16 @@ export default function Footer() {
         >
           <h3 className="text-lg font-semibold text-[#e91e63] mb-4">Follow Us</h3>
           <div className="flex justify-center md:justify-start gap-4 text-gray-300">
-            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+            {[
+              { Icon: Facebook, href: "https://web.facebook.com/profile.php?id=61579559790036" },
+              { Icon: Instagram, href: "https://www.instagram.com/support.smartstudycenter/" },
+              { Icon: Mail, href: "mailto:support.smartstudycenter@gmail.com" },
+            ].map(({ Icon, href }, i) => (
               <motion.a
                 key={i}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, color: "#e91e63" }}
                 transition={{ type: "spring", stiffness: 300 }}
               >

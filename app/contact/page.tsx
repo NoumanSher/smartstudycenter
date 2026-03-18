@@ -171,7 +171,7 @@ export default function ContactPage() {
                   {[
                     { icon: MapPin, title: 'Our Location', content: 'Lahore , Pakistan' },
                     { icon: Phone, title: 'Phone Number', content: '+1 (555) 123-4567' },
-                    { icon: Mail, title: 'Email Address', content: 'info@smartstudy.com' },
+                    { icon: Mail, title: 'Email Address', content: 'support.smartstudycenter@gmail.com' },
                     { icon: Clock, title: 'Working Hours', content: 'Mon - Fri: 9:00 AM - 6:00 PM' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start space-x-4">
@@ -191,13 +191,19 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Follow Us</h3>
                 <p className="text-gray-600 mb-6">Stay connected with us on social media for updates and announcements.</p>
                 <div className="flex gap-2 flex-wrap">
-                  {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((platform) => (
-                    <button
+                  {[
+                    { platform: 'Facebook', href: "https://web.facebook.com/profile.php?id=61579559790036" },
+                    { platform: 'Instagram', href: "https://www.instagram.com/support.smartstudycenter/" }
+                  ].map(({ platform, href }) => (
+                    <a
                       key={platform}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className=" px-6 py-2 bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                       {platform}
-                    </button>
+                    </a>
                   ))}
                 </div>
               </div>

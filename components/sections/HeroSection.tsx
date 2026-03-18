@@ -12,7 +12,7 @@ interface HeroItem {
 const heroData: HeroItem[] = [
   { img: "/first.png", text: "Focusing on creative and critical thinking" },
   { img: "/son.png", text: "Developing logical reasoning" },
-  { img: "/first.png", text: "Improving quantitative reasoning" },
+  { img: "/h2.png", text: "Improving quantitative reasoning" },
   { img: "/first.png", text: "Refining linguistic and communication skills" },
   { img: "/first.png", text: "Concentrating on personal development" },
 ];
