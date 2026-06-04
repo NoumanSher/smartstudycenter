@@ -9,6 +9,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useState } from 'react';
 
+// removed custom WhatsApp SVG — using `Phone` from lucide-react instead
+
 interface FormErrors {
   firstName?: string;
   lastName?: string;
@@ -170,7 +172,9 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   {[
                     { icon: MapPin, title: 'Our Location', content: 'Lahore , Pakistan' },
-                    { icon: Phone, title: 'Phone Number', content: '+1 (555) 123-4567' },
+                    { icon: Phone, title: 'WhatsApp', content: (
+                      <a href="https://wa.me/923000412637?text=Hello%2C%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">+923000412637</a>
+                    ) },
                     { icon: Mail, title: 'Email Address', content: 'support.smartstudycenter@gmail.com' },
                     { icon: Clock, title: 'Working Hours', content: 'Mon - Fri: 9:00 AM - 6:00 PM' },
                   ].map((item, index) => (
