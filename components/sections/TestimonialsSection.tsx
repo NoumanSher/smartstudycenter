@@ -68,7 +68,7 @@ export default function TestimonialsSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20  relative overflow-hidden">
+    <section className="w-full bg-[#F8F9FC] py-20 md:py-24">
       {/* <div className="absolute top-0 left-0 w-96 h-96 bg-[#C71585]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div> */}
 

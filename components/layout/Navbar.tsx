@@ -38,15 +38,14 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="relative">
-              <Image
-                src="/logo.png"
-                alt="Smart Study Center Logo"
-                width={120}
-                height={120}
-                priority
-                quality={100}
-                className="object-contain h-14 w-14 group-hover:scale-110 transition-transform duration-300"
-              />
+             <Image
+  src="/logo.png"
+  alt="Smart Study Center"
+  width={240}
+  height={75}
+  className="h-auto w-[175px] sm:w-[200px] lg:w-[240px]"
+  priority
+/>
             </div>
        
           </Link>
