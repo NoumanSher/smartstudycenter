@@ -48,10 +48,7 @@ export default function Navbar() {
                 className="object-contain h-14 w-14 group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="lg:text-xl text-base font-bold text-gray-900">SMART STUDY CENTER</span>
-              <span className="text-xs text-[#C71585] font-semibold">LOVE TO KNOW</span>
-            </div>
+       
           </Link>
 
           <div className="hidden lg:flex items-center space-x-8">
