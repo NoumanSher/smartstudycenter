@@ -20,19 +20,19 @@ export default function ReadyToStartSection() {
           className="
             mt-12
             flex min-h-[64px]
-            w-full max-w-[560px]
+            w-full max-w-[460px]
             items-center justify-center
             rounded-xl
             bg-[#C71585]
-            px-8 py-4
-            text-xl font-semibold
+            px-8 py-3
+            text-lg font-semibold
             text-white
             shadow-[0_8px_20px_rgba(199,21,133,0.20)]
             transition-all duration-200
             hover:bg-[#B01376]
             hover:shadow-[0_10px_25px_rgba(199,21,133,0.30)]
             active:scale-[0.98]
-            sm:text-2xl
+            lg:text-xl
           "
         >
           Schedule your classes

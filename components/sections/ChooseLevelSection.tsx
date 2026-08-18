@@ -86,16 +86,17 @@ export default function ChooseLevelSection() {
                 className="
                   mt-auto
                   flex
-                  min-h-[64px]
+                  
                   w-full
                   max-w-[290px]
                   items-center
                   justify-center
                   rounded-xl
                   bg-[#C71585]
-                  px-6
-                  py-4
-                  text-xl
+                  px-4
+                  py-3
+                  lg:text-xl
+                  text-lg
                   font-semibold
                   text-white
                   transition-all

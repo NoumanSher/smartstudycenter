@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { BookOpen, Clock, Users, Star, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import  { useRouter } from "next/navigation";
 
 const courses = [
   {
@@ -88,6 +89,7 @@ const courses = [
 ];
 
 export default function CoursesPage() {
+  const router = useRouter();
   return (
     <main className="min-h-screen lg:pt-20 pt-5">
       <section className="py-20  relative overflow-hidden">
@@ -122,6 +124,7 @@ export default function CoursesPage() {
                       fill
                       src={course.image}
                       alt={course.title}
+                      onClick={() => router.push("/contact")}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-semibold text-[#C71585]">

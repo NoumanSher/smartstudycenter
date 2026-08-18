@@ -1,15 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Star,
-  Award,
-  BookOpen,
-  Users,
-  Linkedin,
-  Twitter,
-  Mail,
-} from "lucide-react";
+import { Star, Award, BookOpen, Users } from "lucide-react";
 import Image from "next/image";
 
 const mentors = [
@@ -34,7 +26,7 @@ const mentors = [
     bio: "Former university professor dedicated to inspiring the next generation of scientists.",
   },
   {
-    name: "Rogar Anwer",
+    name: "Late Rogar Anwer",
     title: "English Literature",
     image: "/m2.png",
     specialization: "Creative Writing & Grammar",
@@ -63,7 +55,6 @@ const mentors = [
     rating: 4.9,
     bio: "MPhil and MBA qualified educator, blending technical expertise with management insights.",
   },
-
 ];
 
 export default function MentorsPage() {
