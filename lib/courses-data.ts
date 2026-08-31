@@ -550,10 +550,10 @@ export const coursesData: CourseDetail[] = [
         duration: "6 Months",
         eligibility: "Completion of 7th / 8th Grade or equivalent.",
         keySubjects: [
-          "English Language (1123)",
-          "Mathematics (D) (4024)",
-          "Islamiyat (2058)",
-          "Pakistan Studies (2059)",
+          "English",
+          "Mathematics",
+          "Islamiyat",
+          "Pakistan Studies",
           "General Science Foundation",
         ],
         documentsRequired: [
@@ -578,9 +578,9 @@ export const coursesData: CourseDetail[] = [
         eligibility: "Satisfactory completion of O-1.",
         keySubjects: [
           "Islamiyat & Pakistan Studies (Exam Preparation)",
-          "Physics (5054)",
-          "Chemistry (5070)",
-          "Biology (5090) / Computer Science (2210)",
+          "Physics",
+          "Chemistry",
+          "Biology  / Computer Science",
           "Principles of Accounts / Economics",
         ],
         documentsRequired: [
@@ -603,11 +603,11 @@ export const coursesData: CourseDetail[] = [
         duration: "6 Months",
         eligibility: "Completion of O-2.",
         keySubjects: [
-          "English Language (1123)",
-          "Mathematics (4024)",
-          "Physics (5054)",
-          "Chemistry (5070)",
-          "Biology (5090) / Computer Science (2210)",
+          "English",
+          "Mathematics",
+          "Physics",
+          "Chemistry",
+          "Biology / Computer Science",
         ],
         documentsRequired: [
           "O-2 Result Sheet / Mock Exam Report",
@@ -632,7 +632,7 @@ export const coursesData: CourseDetail[] = [
           "Chemistry",
           "Biology",
           "Computer Science",
-          "Mathematics D",
+          "Mathematics",
         ],
         documentsRequired: [
           "School Report Card",

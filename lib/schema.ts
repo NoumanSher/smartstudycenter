@@ -168,8 +168,7 @@ export const courseSchema = (course: {
   offers: {
     "@type": "Offer",
     category: "Paid",
-    priceCurrency: "USD",
-    price: course.price.replace(/\D/g, "") || "299",
+    priceCurrency: "PKR",
     availability: "https://schema.org/InStock",
   },
 });

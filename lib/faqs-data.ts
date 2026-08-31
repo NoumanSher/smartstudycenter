@@ -14,11 +14,7 @@ export const faqsData: FAQItem[] = [
     answer:
       "We offer both live interactive classes and recorded sessions. Live classes allow you to interact with instructors in real-time, while recorded sessions give you the flexibility to learn and revise at your own pace.",
   },
-  {
-    question: "What is the refund policy?",
-    answer:
-      "We offer a 7-day money-back guarantee. If you are not satisfied with the course within the first 7 days, you can request a full refund, no questions asked.",
-  },
+
   {
     question: "Do I receive a certificate upon completion?",
     answer:
