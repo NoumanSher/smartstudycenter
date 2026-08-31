@@ -108,7 +108,7 @@ export const organizationSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Course",
-          name: "Junior Section (Classes 6th to 8th)",
+          name: "Junior Section (Classes 4th to 8th)",
           url: "https://www.smartstudycenter.com/courses/juniors",
         },
       },

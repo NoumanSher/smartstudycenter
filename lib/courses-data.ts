@@ -31,7 +31,7 @@ export interface CourseDetail {
 export const coursesData: CourseDetail[] = [
   {
     slug: "juniors",
-    title: "Junior Section (Classes 6th - 8th)",
+    title: "Junior Section (Classes 4th - 8th)",
     shortTitle: "Juniors",
     category: "Junior Level",
     level: "Beginner to Middle",
@@ -43,7 +43,7 @@ export const coursesData: CourseDetail[] = [
       "Foundational courses for junior students building strong academic basics in English, Math, and Sciences.",
     image:
       "https://images.pexels.com/photos/5428010/pexels-photo-5428010.jpeg?auto=compress&cs=tinysrgb&w=400",
-    heroHeading: "Junior Academic Excellence (Classes 6th to 8th)",
+    heroHeading: "Junior Academic Excellence (Classes 4th to 8th)",
     heroDescription:
       "Inspire curiosity and strong study habits from an early age. Our junior programs nurture confident learners through interactive teaching, foundational mathematics, reading comprehension, and science experiments.",
     tabs: [

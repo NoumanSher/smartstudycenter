@@ -34,7 +34,7 @@ Smart Study Center (originally established in 2008 as Pakistan Science and Comme
 - **Streams**: 9th Class Science, 10th Class Science, Pre-9th Foundation, General/Arts Group.
 - **Features**: SLO (Student Learning Outcomes) based teaching for FBISE & Punjab Boards, board paper presentation techniques, full-book grand test series.
 
-### 5. Junior Section (Classes 6th to 8th)
+### 5. Junior Section (Classes 4th to 8th)
 - **URL**: https://www.smartstudycenter.com/courses/juniors
 - **Streams**: Class 6th, Class 7th, Class 8th, Foundation English & Math Booster.
 - **Features**: Interactive live classes, arithmetic and conceptual science foundations, homework assistance.

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const levels = [
   {
-    level: "6-8",
+    level: "4-8",
     title: "Juniors",
     slug: "juniors",
     description: (
