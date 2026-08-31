@@ -26,18 +26,23 @@ export const metadata: Metadata = {
     siteName: 'Smart Study Center',
     images: [
       {
-        url: '/smart-study-center-logo.png',
-        width: 881,
-        height: 215,
-        alt: 'Smart Study Center Logo',
+        url: '/icon.png',
+        width: 800,
+        height: 800,
+        alt: 'Smart Study Center',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Smart Study Center - Online Education & Mentorship',
     description: 'Expert online education with personalized mentorship for classes 6th through A-Levels, Intermediate, and Entry Tests.',
-    images: ['/smart-study-center-logo.png'],
+    images: ['/icon.png'],
+  },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
   },
   alternates: {
     canonical: 'https://www.smartstudycenter.com',

@@ -1,6 +1,6 @@
 // app/contact/page.tsx
 'use client';
-
+import { isValidPhoneNumber } from 'libphonenumber-js';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react'; 
 import { Button } from '@/components/ui/button';
@@ -8,8 +8,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useState } from 'react';
-
-// removed custom WhatsApp SVG — using `Phone` from lucide-react instead
 
 interface FormErrors {
   firstName?: string;
@@ -70,11 +68,11 @@ export default function ContactPage() {
     }
 
     // Phone validation
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    } else if (!/^[\d\s\-\+\(\)]+$/.test(formData.phone)) {
-      newErrors.phone = 'Please enter a valid phone number';
-    }
+  if (!formData.phone.trim()) {
+  newErrors.phone = 'Phone number is required';
+} else if (!isValidPhoneNumber(formData.phone)) {
+  newErrors.phone = 'Please enter a valid phone number e.g +966541935900';
+}
 
     // Grade Level validation
     if (!gradeLevel) {
@@ -141,60 +139,83 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen pt-20">
-      <section className="py-20 relative overflow-hidden">
-        {/* <div className="absolute top-0 left-0 w-96 h-96 bg-[#C71585]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div> */}
-
+    <main className="min-h-screen pt-24 sm:pt-28 pb-16 overflow-x-hidden">
+      <section className="relative overflow-hidden w-full">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
               Get In <span className="text-[#C71585]">Touch</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Have questions? We would love to hear from you. Send us a message and we will respond as soon as possible.
+            <p className="text-sm sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
+              Have questions about our academic programs? Send us a message or reach out on WhatsApp and our team will assist you promptly.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start w-full">
+            {/* Left Column: Contact Information */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="space-y-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="space-y-6 sm:space-y-8 w-full min-w-0"
             >
-              <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-4 border border-white/20 shadow-xl">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
+              <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-5 sm:p-7 md:p-8 border border-white/40 shadow-lg">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                  Contact Information
+                </h2>
 
-                <div className="space-y-6">
+                <div className="space-y-5 sm:space-y-6">
                   {[
-                    { icon: MapPin, title: 'Our Location', content: 'Lahore , Pakistan' },
-                    { icon: Phone, title: 'WhatsApp', content: (
-                      <a href="https://wa.me/923000412637?text=Hello%2C%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">+923000412637</a>
-                    ) },
-                    { icon: Mail, title: 'Email Address', content: 'support.smartstudycenter@gmail.com' },
-                    { icon: Clock, title: 'Working Hours', content: 'Mon - Fri: 9:00 AM - 6:00 PM' },
+                    { icon: MapPin, title: 'Our Location', content: 'Lahore, Pakistan (Global Distance Learning)' },
+                    { 
+                      icon: Phone, 
+                      title: 'WhatsApp & Phone', 
+                      content: (
+                        <a 
+                          href="https://wa.me/923000412637?text=Hello%2C%20I%27m%20interested%20in%20your%20services" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[#C71585] font-semibold hover:underline"
+                        >
+                          +92 300 0412637
+                        </a>
+                      ) 
+                    },
+                    { 
+                      icon: Mail, 
+                      title: 'Email Address', 
+                      content: (
+                        <a 
+                          href="mailto:support.smartstudycenter@gmail.com" 
+                          className="text-gray-700 hover:text-[#C71585] break-all"
+                        >
+                          support.smartstudycenter@gmail.com
+                        </a>
+                      ) 
+                    },
+                    { icon: Clock, title: 'Working Hours', content: 'Mon - Fri: 9:00 AM - 6:00 PM (PKT)' },
                   ].map((item, index) => (
-                    <div key={index} className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#C71585] to-[#FF1493] rounded-xl flex items-center justify-center flex-shrink-0">
-                        <item.icon className="w-6 h-6 text-white" />
+                    <div key={index} className="flex items-start space-x-3.5 sm:space-x-4 min-w-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#C71585] to-[#FF1493] rounded-xl flex items-center justify-center shrink-0 shadow-md">
+                        <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">{item.title}</h3>
-                        <p className="text-gray-600">{item.content}</p>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="font-semibold text-gray-900 text-sm sm:text-base">{item.title}</h3>
+                        <div className="text-gray-600 text-xs sm:text-sm mt-0.5">{item.content}</div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-4 border border-white/20 shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Follow Us</h3>
-                <p className="text-gray-600 mb-6">Stay connected with us on social media for updates and announcements.</p>
-                <div className="flex gap-2 flex-wrap">
+              <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-5 sm:p-7 md:p-8 border border-white/40 shadow-lg">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Follow Us</h3>
+                <p className="text-gray-600 text-xs sm:text-sm mb-5">Stay connected with us on social media for curriculum updates and announcements.</p>
+                <div className="flex gap-2.5 flex-wrap">
                   {[
                     { platform: 'Facebook', href: "https://web.facebook.com/profile.php?id=61579559790036" },
                     { platform: 'Instagram', href: "https://www.instagram.com/support.smartstudycenter/" }
@@ -204,7 +225,7 @@ export default function ContactPage() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className=" px-6 py-2 bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      className="px-5 py-2 text-xs sm:text-sm bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white font-semibold rounded-full hover:shadow-md hover:scale-105 transition-all duration-300"
                     >
                       {platform}
                     </a>
@@ -213,38 +234,40 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
+            {/* Right Column: Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="bg-white/40 backdrop-blur-xl rounded-2xl p-4 border border-white/20 shadow-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white/90 backdrop-blur-xl rounded-2xl p-5 sm:p-7 md:p-8 border border-white/40 shadow-xl w-full min-w-0"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
 
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <div className="space-y-4 sm:space-y-5 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                  <div className="w-full min-w-0">
+                    <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
                       First Name <span className="text-red-500">*</span>
                     </label>
                     <Input 
                       value={formData.firstName}
                       onChange={(e) => handleInputChange('firstName', e.target.value)}
-                      placeholder="John" 
-                      className={`bg-white/60 ${errors.firstName ? 'border-red-500' : ''}`}
+                      placeholder="First Name" 
+                      className={`w-full !placeholder-gray-400 bg-white text-sm ${errors.firstName ? 'border-red-500' : ''}`}
                     />
                     {errors.firstName && (
                       <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
                     )}
                   </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <div className="w-full min-w-0">
+                    <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
                       Last Name <span className="text-red-500">*</span>
                     </label>
                     <Input 
                       value={formData.lastName}
                       onChange={(e) => handleInputChange('lastName', e.target.value)}
-                      placeholder="Doe" 
-                      className={`bg-white/60 ${errors.lastName ? 'border-red-500' : ''}`}
+                      placeholder="Last Name" 
+                      className={`w-full !placeholder-gray-400 bg-white text-sm ${errors.lastName ? 'border-red-500' : ''}`}
                     />
                     {errors.lastName && (
                       <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>
@@ -252,53 +275,54 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <div className="w-full min-w-0">
+                  <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
                     Email <span className="text-red-500">*</span>
                   </label>
                   <Input 
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     type="email" 
-                    placeholder="john@example.com" 
-                    className={`bg-white/60 ${errors.email ? 'border-red-500' : ''}`}
+                    placeholder="Enter email address" 
+                    className={`w-full !placeholder-gray-400 bg-white text-sm ${errors.email ? 'border-red-500' : ''}`}
                   />
                   {errors.email && (
                     <p className="text-red-500 text-xs mt-1">{errors.email}</p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone <span className="text-red-500">*</span>
+                <div className="w-full min-w-0">
+                  <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
+                    Phone / WhatsApp <span className="text-red-500">*</span>
                   </label>
                   <Input 
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
                     type="tel" 
-                    placeholder="+1 (555) 123-4567" 
-                    className={`bg-white/60 ${errors.phone ? 'border-red-500' : ''}`}
+                    placeholder="Enter phone number with country code" 
+                    className={`w-full !placeholder-gray-400 bg-white text-sm ${errors.phone ? 'border-red-500' : ''}`}
                   />
                   {errors.phone && (
                     <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Grade Level <span className="text-red-500">*</span>
+                <div className="w-full min-w-0">
+                  <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
+                    Grade / Program <span className="text-red-500">*</span>
                   </label>
                   <Select value={gradeLevel} onValueChange={handleGradeChange}>
-                    <SelectTrigger className={`bg-white/60 ${errors.gradeLevel ? 'border-red-500' : ''}`}>
-                      <SelectValue placeholder="Select your grade level" />
+                    <SelectTrigger className={`w-full bg-white text-sm ${errors.gradeLevel ? 'border-red-500' : ''}`}>
+                      <SelectValue placeholder="Select your grade / program" />
                     </SelectTrigger>
                     <SelectContent className='bg-white'>
-                      <SelectItem value="elementary">Elementary (1-5)</SelectItem>
-                      <SelectItem value="middle">Middle School (6-8)</SelectItem>
-                      <SelectItem value="high">High School (9-12)</SelectItem>
-                      <SelectItem value="college">College/University</SelectItem>
-                      <SelectItem value="graduate">Graduate School</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="juniors">Junior Classes (6th - 8th)</SelectItem>
+                      <SelectItem value="matric">Matriculation (9th - 10th)</SelectItem>
+                      <SelectItem value="intermediate">Intermediate (F.Sc / ICS / I.Com)</SelectItem>
+                      <SelectItem value="o-level">Cambridge O-Level / IGCSE</SelectItem>
+                      <SelectItem value="a-level">Cambridge / Edexcel A-Level</SelectItem>
+                      <SelectItem value="entry-test">Entry Test Prep (MDCAT / ECAT / NET)</SelectItem>
+                      <SelectItem value="other">Other Inquiry</SelectItem>
                     </SelectContent>
                   </Select>
                   {errors.gradeLevel && (
@@ -310,7 +334,7 @@ export default function ContactPage() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="mt-3"
+                      className="mt-2.5 w-full min-w-0"
                     >
                       <Input
                         value={otherGrade}
@@ -318,23 +342,23 @@ export default function ContactPage() {
                           setOtherGrade(e.target.value);
                           setErrors(prev => ({ ...prev, gradeLevel: undefined }));
                         }}
-                        placeholder="Please specify your grade level"
-                        className="bg-white/60"
+                        placeholder="Please specify your grade or subject"
+                        className="w-full  bg-white text-sm"
                       />
                     </motion.div>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <div className="w-full min-w-0">
+                  <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
                     Message <span className="text-red-500">*</span>
                   </label>
                   <Textarea 
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
-                    placeholder="Tell us more about your inquiry..." 
-                    rows={5} 
-                    className={`bg-white/60 ${errors.message ? 'border-red-500' : ''}`}
+                    placeholder="Tell us about your learning goals or questions..." 
+                    rows={4} 
+                    className={`w-full !placeholder-gray-400 bg-white text-sm ${errors.message ? 'border-red-500' : ''}`}
                   />
                   {errors.message && (
                     <p className="text-red-500 text-xs mt-1">{errors.message}</p>
@@ -345,9 +369,9 @@ export default function ContactPage() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+                    className="p-3.5 bg-green-100 border border-green-400 text-green-700 rounded-xl text-xs sm:text-sm font-medium"
                   >
-                    ✓ Message sent successfully! We&apos;ll get back to you soon.
+                    ✓ Message sent successfully! Our academic team will get back to you shortly.
                   </motion.div>
                 )}
 
@@ -355,19 +379,19 @@ export default function ContactPage() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+                    className="p-3.5 bg-red-100 border border-red-400 text-red-700 rounded-xl text-xs sm:text-sm font-medium"
                   >
-                    ✗ Failed to send message. Please try again.
+                    ✗ Failed to send message. Please reach us directly via WhatsApp.
                   </motion.div>
                 )}
 
                 <Button 
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white font-semibold py-6 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white font-semibold py-4 sm:py-5 rounded-xl hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base mt-2"
                 >
                   <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4 ml-1" />
                 </Button>
               </div>
             </motion.div>
@@ -377,4 +401,3 @@ export default function ContactPage() {
     </main>
   );
 }
-
