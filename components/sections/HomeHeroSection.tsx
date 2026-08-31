@@ -36,9 +36,9 @@ export default function HomeHeroSection() {
             xl:text-[64px]
           "
         >
-          Studying Pakistani curriculum in
+          Study from anywhere
           <br className="hidden sm:block" />
-          Saudi Arabia?
+          across the globe.
         </h1>
 
         {/* Subtitle */}
@@ -66,18 +66,11 @@ export default function HomeHeroSection() {
             min-w-[280px]
             items-center
             justify-center
-            rounded-xl
-            bg-[#C71585]
-            px-8
+bg-gradient-to-r from-[#C71585] to-[#FF1493] rounded-full text-white  font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300            px-8
             py-4
             text-lg
-            font-semibold
-            text-white
             shadow-[0_8px_20px_rgba(199,21,133,0.20)]
-            transition-all
-            duration-200
             hover:bg-[#b01376]
-            hover:shadow-[0_10px_25px_rgba(199,21,133,0.30)]
             active:scale-[0.98]
             sm:min-w-[320px]
             sm:text-xl

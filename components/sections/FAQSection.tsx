@@ -2,37 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-
-const faqs = [
-  {
-    question: 'How do I enroll in a course?',
-    answer: 'Simply browse our course catalog, select the course you are interested in, and click the "Enroll Now" button. You will be guided through a simple registration process.',
-  },
-  {
-    question: 'Are the classes live or recorded?',
-    answer: 'We offer both live interactive classes and recorded sessions. Live classes allow you to interact with instructors in real-time, while recorded sessions give you the flexibility to learn at your own pace.',
-  },
-  {
-    question: 'What is the refund policy?',
-    answer: 'We offer a 7-day money-back guarantee. If you are not satisfied with the course within the first 7 days, you can request a full refund, no questions asked.',
-  },
-  {
-    question: 'Do I receive a certificate upon completion?',
-    answer: 'Yes! Upon successful completion of a course and passing all assessments, you will receive a certificate of completion that you can share on your resume or LinkedIn profile.',
-  },
-  {
-    question: 'Can I interact with mentors?',
-    answer: 'Absolutely! Our platform includes live Q&A sessions, discussion forums, and one-on-one mentorship opportunities where you can directly interact with expert mentors.',
-  },
-  {
-    question: 'What subjects and courses are available?',
-    answer: 'We offer a wide range of short courses including Mathematics, Science, English, Programming, Test Preparation, and many more. Our catalog is constantly expanding to meet student needs.',
-  },
-  {
-    question: 'Is there a mobile app available?',
-    answer: 'Coming soon , We are working on a mobile app to provide you with the best learning experience on the go. Stay tuned for updates!',
-  }
-];
+import { faqsData } from '@/lib/faqs-data';
 
 export default function FAQSection() {
   return (
@@ -63,7 +33,7 @@ export default function FAQSection() {
           className="bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl p-4 md:p-8"
         >
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+            {faqsData.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}

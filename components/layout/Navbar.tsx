@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Menu, X, GraduationCap } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X, GraduationCap } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 const navLinks = [
-  { name: 'About Us', href: '/about' },
-  { name: 'Courses', href: '/courses' },
-  { name: 'Mentors', href: '/mentors' },
-  { name: 'Contact Us', href: '/contact' },
+  { name: "About Us", href: "/about" },
+  { name: "Our Values", href: "/values" },
+  { name: "Courses", href: "/courses" },
+  { name: "Mentors", href: "/mentors" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -20,34 +21,35 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50  transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-lg'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 border border-b   transition-all duration-300 ${
+        scrolled ? "bg-white/80 backdrop-blur-lg shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="lg:max-w-7xl w-full  lg:mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-             <Image
-  src="/logo.png"
-  alt="Smart Study Center"
-  width={240}
-  height={75}
-  className="h-auto w-[175px] sm:w-[200px] lg:w-[240px]"
-  priority
-/>
+          <Link
+            href="/"
+            className="flex items-center h-full group py-2"
+          >
+            <div className="relative flex items-center">
+              <Image
+                src="/smart-study-center-logo.png"
+                alt="Smart Study Center"
+                width={260}
+                height={65}
+                quality={100}
+                className="h-10 sm:h-12 md:h-[70px] w-auto object-contain"
+                priority
+              />
             </div>
-       
           </Link>
 
           <div className="hidden lg:flex items-center space-x-8">
@@ -63,7 +65,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="px-6 py-2 bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="px-6 py-2 bg-gradient-to-r from-[#C71585] to-[#FF1493] rounded-full text-white  font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Get Started
             </Link>
@@ -82,7 +84,7 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white/95 backdrop-blur-lg shadow-lg"
           >

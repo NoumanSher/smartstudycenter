@@ -2,35 +2,74 @@ import Link from "next/link";
 
 const levels = [
   {
-    level: "9-10",
-    title: "Matric",
+    level: "6-8",
+    title: "Juniors",
+    slug: "juniors",
     description: (
       <>
-        Science, Math, English,
+        8th Grade Foundation,
         <br />
-        Urdu, Islamic Studies
+        Prep for High School
+      </>
+    ),
+  },
+
+  {
+    level: "9-10",
+    title: "Matric",
+    slug: "matric",
+    description: (
+      <>
+        Computer Science, Bio Science &
+        <br />
+        Matric Arts,
       </>
     ),
   },
   {
     level: "11-12",
     title: "Intermediate",
+    slug: "intermediate",
     description: (
       <>
-        F.Sc, G.Sc, I.C.S, Pre-
-        <br />
-        Engineering
+        F.Sc. (Pre-Medical & Pre- Engineering), I.C.S.,
+        <br /> G.Sc. & F.A.
       </>
     ),
   },
   {
     level: "A-Levels",
-    title: "Juniors",
+    title: "A-Level Programmes",
+    slug: "a-level",
     description: (
       <>
-        8th Grade Foundation,
+        Medical, Engineering, Computer Science & Al,
         <br />
-        Prep for High School
+        Business, Humanities
+      </>
+    ),
+  },
+  {
+    level: "O-Levels",
+    title: "Cambridge Curriculum",
+    slug: "o-level",
+    description: (
+      <>
+        Science, Computer Science,
+        <br />
+        Business, Humanities
+      </>
+    ),
+  },
+  {
+    level: "Entry Tests",
+    title: "University Preparation",
+    slug: "entry-test",
+    description: (
+      <>
+        MDCAT, ECAT &
+        <br />
+        University Entry Tests
       </>
     ),
   },
@@ -41,8 +80,8 @@ export default function ChooseLevelSection() {
     <section className="w-full bg-[#FAF7F9] px-4 py-16 sm:px-6 md:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Section Heading */}
-        <h2 className="mb-12 text-center text-4xl font-medium tracking-tight text-black sm:text-5xl">
-          Choose your level
+        <h2 className="text-4xl text-center md:text-5xl font-bold text-gray-900 mb-10">
+          Choose Your <span className="text-[#C71585]">Level</span>?
         </h2>
 
         {/* Cards */}
@@ -82,17 +121,16 @@ export default function ChooseLevelSection() {
 
               {/* Explore */}
               <Link
-                href="/contact"
+                href={`/courses/${item.slug}`}
                 className="
                   mt-auto
                   flex
-                  
+                  bg-gradient-to-r from-[#C71585] to-[#FF1493] rounded-full    hover:scale-95 
                   w-full
                   max-w-[290px]
                   items-center
                   justify-center
-                  rounded-xl
-                  bg-[#C71585]
+              
                   px-4
                   py-3
                   lg:text-xl

@@ -22,15 +22,10 @@ export default function ReadyToStartSection() {
             flex min-h-[64px]
             w-full max-w-[460px]
             items-center justify-center
-            rounded-xl
-            bg-[#C71585]
-            px-8 py-3
-            text-lg font-semibold
-            text-white
+bg-gradient-to-r from-[#C71585] to-[#FF1493] rounded-full text-white  font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300            px-8 py-3
+            text-lg 
             shadow-[0_8px_20px_rgba(199,21,133,0.20)]
-            transition-all duration-200
             hover:bg-[#B01376]
-            hover:shadow-[0_10px_25px_rgba(199,21,133,0.30)]
             active:scale-[0.98]
             lg:text-xl
           "

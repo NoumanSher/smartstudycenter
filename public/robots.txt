@@ -1,25 +1,60 @@
-# Smart Study Center - Search Engine Crawling Rules
-# Allow all search engines to crawl and index
+# Smart Study Center (SSC) - Search Engine & AI Crawler Rules
+# Generative Engine Optimization (GEO) & SEO Enabled
 
-# Google
+# Googlebot & Google AI Overviews
 User-agent: Googlebot
+User-agent: Google-Extended
 Allow: /
 Crawl-delay: 0
 
-# Bing
+# OpenAI / ChatGPT / SearchBot
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 0
+
+# Perplexity AI Crawler
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 0
+
+# Anthropic Claude AI
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 0
+
+# Microsoft Bing & Copilot
 User-agent: Bingbot
+User-agent: msnbot
 Allow: /
 Crawl-delay: 1
 
-# All other bots
+# Apple Intelligence
+User-agent: Applebot
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 0
+
+# Cohere & Other AI Crawlers
+User-agent: cohere-ai
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+# All Other Web Crawlers
 User-agent: *
 Allow: /
 Crawl-delay: 1
 
-# Disallow private/admin paths if they exist
-Disallow: /admin/
+# Disallowed paths
 Disallow: /api/
+Disallow: /admin/
 Disallow: /*.json$
 
-# Sitemap location
+# Sitemaps & LLM Grounding Files
 Sitemap: https://www.smartstudycenter.com/sitemap.xml
+# LLMs Context Standard:
+# https://www.smartstudycenter.com/llms.txt
+# https://www.smartstudycenter.com/llms-full.txt

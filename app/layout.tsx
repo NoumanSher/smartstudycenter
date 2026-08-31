@@ -4,38 +4,40 @@ import { Inter } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.smartstudycenter.com'),
-  title: 'Smart Study Center - Online Classes for 8th to A-Levels Pakistan school system in Saudi Arabia  | Expert Mentorship',
-  description: 'Quality online education for classes 8th through A-Levels. Expert mentors, personalized learning, and proven results. Join thousands of successful students in regions without access to quality physical classes.',
-  keywords: 'online classes 8th grade, Pakistan School System, Love to know,Pakistan school system in Saudi Arabia, A-Levels online courses, online tutoring Pakistan, distance learning education, virtual classes, home tuition online, 9th 10th 11th 12th online classes, A-Levels preparation, online mentorship',
+  title: 'Smart Study Center - Online Classes for Class 6th to A-Levels & Entry Tests | Expert Mentorship',
+  description: 'Quality online education for classes 6th through A-Levels, Intermediate, and University Entry Tests. Expert mentors, personalized learning, and proven results for students in Pakistan, Saudi Arabia, and worldwide.',
+  keywords: 'online classes 8th grade, Pakistan School System, Love to know, Pakistan school system in Saudi Arabia, A-Levels online courses, O-Levels online courses, Intermediate FSc tuition, online tutoring Pakistan, distance learning education, MDCAT preparation online, ECAT preparation online',
   authors: [{ name: 'Smart Study Center' }],
-  creator: 'Blaze Logic',
+  creator: 'Smart Study Center',
   publisher: 'Smart Study Center',
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.smartstudycenter.com',
-    title: 'Smart Study Center - Online Classes for 8th to A-Levels',
-    description: 'Expert online education with personalized mentorship for classes 8th through A-Levels. Accessible to students everywhere.',
+    title: 'Smart Study Center - Online Education & Mentorship',
+    description: 'Expert online education with personalized mentorship for classes 6th through A-Levels, Intermediate, and Entry Tests.',
     siteName: 'Smart Study Center',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
+        url: '/smart-study-center-logo.png',
+        width: 881,
+        height: 215,
         alt: 'Smart Study Center Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Smart Study Center - Online Classes for 8th to A-Levels',
-    description: 'Expert online education with personalized mentorship for classes 8th through A-Levels.',
-    images: ['/logo.png'],
+    title: 'Smart Study Center - Online Education & Mentorship',
+    description: 'Expert online education with personalized mentorship for classes 6th through A-Levels, Intermediate, and Entry Tests.',
+    images: ['/smart-study-center-logo.png'],
   },
   alternates: {
     canonical: 'https://www.smartstudycenter.com',
@@ -50,38 +52,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Site Verification - Add your verification code here */}
-        {/* <meta name="google-site-verification" content="your-google-verification-code" /> */}
-
         {/* Additional SEO Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 
-        {/* Schema.org JSON-LD for Organization */}
+        {/* Schema.org JSON-LD for Organization & Website */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'EducationalOrganization',
-              name: 'Smart Study Center',
-              description: 'Online education platform for classes 8th through O-Levels with expert mentorship',
-              url: 'https://www.smartstudycenter.com',
-              logo: 'https://www.smartstudycenter.com/logo.png',
-              sameAs: [
-                'https://facebook.com/smartstudycenter',
-                'https://twitter.com/smartstudycenter',
-                'https://instagram.com/smartstudycenter',
-              ],
-              contactPoint: {
-                '@type': 'ContactPoint',
-                contactType: 'Customer Service',
-                email: 'info@smartstudycenter.com',
-                availableLanguage: 'en',
-              },
-              educationalCredentialAwarded: ['9th Grade Certificate', '10th Grade Certificate', 'O-Levels Certificate'],
-            }),
+            __html: JSON.stringify([organizationSchema, websiteSchema]),
           }}
         />
       </head>
@@ -89,7 +69,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-         <WhatsAppButton />
+        <WhatsAppButton />
       </body>
     </html>
   );

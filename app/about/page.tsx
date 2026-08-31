@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, Award, Users, TrendingUp } from "lucide-react";
+import { Target, Eye, Heart } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -36,23 +36,29 @@ export default function AboutPage() {
                 Our <span className="text-[#C71585]">Story</span>{" "}
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Smart Study Center was founded with a simple yet powerful
-                mission: to make quality education accessible to every student,
-                regardless of their location or background. We believe that
-                every student deserves personalized attention and expert
-                guidance to unlock their full potential.
+                A Legacy of Quality Education Founded in 2008 as Pakistan
+                Science and Commerce Academy, our institution began with a clear
+                purpose: to provide quality education, strong guidance, and
+                meaningful support to every student. Through dedication, trust,
+                and years of academic excellence, the academy has grown into
+                Smart Study Center—a modern online learning platform serving
+                students from anywhere across the globe.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Over the years, we have grown from a small tutoring center to a
-                comprehensive online learning platform, serving thousands of
-                students across the globe. Our success is built on the
-                foundation of passionate educators, innovative teaching methods,
-                and a deep commitment to student success.
+                From the beginning, our foundation has been built on quality
+                teaching, personal attention, discipline, and strong values. Our
+                proud alumni are now spread across the world, using their
+                knowledge and skills to build successful careers and contribute
+                to humanity. Many students who prepared for entry tests with us
+                have earned admission to respected institutions and are now
+                living successful, dignified, and purposeful lives. Their
+                achievements motivate us to continue improving every day.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Today, we continue to evolve and adapt, incorporating the latest
-                educational technology and pedagogy to ensure our students
-                receive the best possible learning experience.
+                Today, Smart Study Center combines our trusted educational
+                legacy with modern online learning. We help students develop
+                strong concepts, confidence, discipline, and the skills needed
+                to achieve their academic and professional goals.
               </p>
             </motion.div>
 
@@ -62,13 +68,13 @@ export default function AboutPage() {
               className="relative"
             >
               <div className="absolute inset-0  rounded-3xl blur-2xl"></div>
-              <div className="relative bg-white/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+              <div className="relative bg-white/40 backdrop-blur-xs rounded-3xl p-8 border border-white/20 shadow-2xl">
                 <Image
                   width={300}
                   height={300}
                   priority
                   quality={100}
-                  src="/logo.png"
+                  src="/smart-study-center-logo.png"
                   alt="About Us"
                   className="w-full h-auto rounded-2xl shadow-xl object-contain"
                 />
