@@ -86,7 +86,7 @@ export default function Footer() {
               },
               {
                 Icon: Instagram,
-                href: "https://www.instagram.com/support.smartstudycenter/",
+                href: "https://www.instagram.com/smartstudycenteronline",
               },
               { Icon: Mail, href: "mailto:support.smartstudycenter@gmail.com" },
             ].map(({ Icon, href }, i) => (

@@ -110,6 +110,8 @@ export async function POST(request: NextRequest) {
       </html>
     `;
 
+    const recipientEmail = process.env.CONTACT_RECEIVER_EMAIL || 'support.smartstudycenter@gmail.com';
+
     // Send email using Resend
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -118,9 +120,10 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Contact Form <onboarding@resend.dev>',
-        to: ['nk104626@gmail.com'],
-        subject: `New Contact: ${firstName} ${lastName}`,
+        from: process.env.RESEND_FROM_EMAIL || 'Smart Study Center <support@smartstudycenter.com>',
+        to: [recipientEmail],
+        reply_to: email,
+        subject: `New Inquiry from ${firstName} ${lastName} (${gradeLevel})`,
         html: emailHtml,
       }),
     });

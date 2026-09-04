@@ -37,7 +37,7 @@ export default function HomeHeroSection() {
           "
         >
           Study from any where
-          <br className="hidden sm:block" />
+          <br />
           across the globe.
         </h1>
 
