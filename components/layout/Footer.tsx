@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Facebook, Instagram, Mail } from "lucide-react";
+import { Facebook, Instagram, Mail, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -91,7 +91,11 @@ export default function Footer() {
               },
               {
                 Icon: Instagram,
-                href: "https://www.instagram.com/smartstudycenteronline",
+                href: "https://www.instagram.com/support.smartstudycenter/",
+              },
+              {
+                Icon: Linkedin,
+                href: "https://www.linkedin.com/company/smart-study-center",
               },
               { Icon: Mail, href: "mailto:support.smartstudycenter@gmail.com" },
             ].map(({ Icon, href }, i) => (
