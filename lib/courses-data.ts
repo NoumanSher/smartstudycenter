@@ -41,8 +41,7 @@ export const coursesData: CourseDetail[] = [
     price: "$199",
     cardDescription:
       "Foundational courses for junior students building strong academic basics in English, Math, and Sciences.",
-    image:
-      "https://images.pexels.com/photos/5428010/pexels-photo-5428010.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image:"/Juniors.jpeg",
     heroHeading: "Junior Academic Excellence (Classes 4th to 8th)",
     heroDescription:
       "Inspire curiosity and strong study habits from an early age. Our junior programs nurture confident learners through interactive teaching, foundational mathematics, reading comprehension, and science experiments.",
@@ -157,7 +156,7 @@ export const coursesData: CourseDetail[] = [
     cardDescription:
       "Matriculation level courses covering Federal (FBISE) and Provincial Boards with comprehensive exam focus.",
     image:
-      "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "/Matriculation.jpeg",
     heroHeading: "Matriculation (9th & 10th Class) Programs",
     heroDescription:
       "Our Matric sessions provide complete academic support for students preparing for board examinations. We cover every subject with clear concepts, structured notes, and regular practice. Experienced teachers focus on important topics, past papers, and effective exam techniques. Students can ask questions freely and receive guidance whenever they need it. Frequent tests and assessments help identify weak areas and improve performance. We help Matric students prepare confidently for excellent results and future studies.",
@@ -255,7 +254,7 @@ export const coursesData: CourseDetail[] = [
     cardDescription:
       "Intermediate level education covering pre-engineering, pre-medical, ICS, and commerce streams.",
     image:
-      "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "/intermediate.jpeg",
     heroHeading: "Intermediate Programs",
     heroDescription:
       "Intermediate is a crucial stage where students need focused guidance to understand every subject properly. At Smart Study Center, each student receives individual attention according to their academic needs. Our subject-specialist teachers explain concepts clearly and help students overcome their weak areas. We provide complete support through regular classes, notes, practice sessions, and assessments. Students are guided to improve their study routine, confidence, and examination performance. Our goal is to help every Intermediate student achieve strong results and choose a successful future path.",
@@ -406,7 +405,7 @@ export const coursesData: CourseDetail[] = [
     cardDescription:
       "Comprehensive preparation for Cambridge and Edexcel Advanced Level examinations with in-depth subject mastery.",
     image:
-      "https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "/A levels.jpeg",
     heroHeading: "Cambridge & Edexcel A-Level Programs",
     heroDescription:
       "Our A-Level academic tracks are structured to help students achieve straight A*s and secure admissions into prestigious universities worldwide. Experience top-tier mentorship, topical past-paper drills, and marking scheme mastery.",
@@ -536,7 +535,7 @@ export const coursesData: CourseDetail[] = [
     cardDescription:
       "Complete Ordinary Level course covering core subjects, Cambridge syllabus, and exam preparation strategies.",
     image:
-      "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "/o levels.jpeg",
     heroHeading: "Cambridge O-Level & IGCSE Programs",
     heroDescription:
       "Our O Level sessions provide focused support for students following the Cambridge curriculum. We make difficult concepts easier through clear teaching, practical examples, and guided practice. Students receive help with syllabus coverage, topical questions, and past-paper preparation. Our teachers emphasize critical thinking, time management, and effective answering techniques. Individual attention helps every student improve in the subjects they find challenging. We prepare O Level students to achieve their best possible grades with confidence.",

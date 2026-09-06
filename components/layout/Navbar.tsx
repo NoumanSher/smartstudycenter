@@ -9,6 +9,7 @@ const navLinks = [
   { name: "About Us", href: "/about" },
   { name: "Our Values", href: "/values" },
   { name: "Courses", href: "/courses" },
+  { name: "Short Courses", href: "/short-courses" },
   { name: "Mentors", href: "/mentors" },
   { name: "Contact Us", href: "/contact" },
 ];
