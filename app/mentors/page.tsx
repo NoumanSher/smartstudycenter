@@ -23,7 +23,7 @@ const mentors = [
     experience: "18+ years",
     students: "1800+",
     rating: 5.0,
-    bio: "n Loving Memory | First Teacher Since 2008 Late Roger Anwer was the first teacher of our institute when it was founded in 2008 and remained a valued part of its journey until his passing. He believed in modernising the education system and inspired students through his dedication to meaningful learning. His legacy and vision will always remain a cherished part of Smart Study Center.",
+    bio: "In Loving Memory | First Teacher Since 2008 Late Roger Anwer was the first teacher of our institute when it was founded in 2008 and remained a valued part of its journey until his passing. He believed in modernising the education system and inspired students through his dedication to meaningful learning. His legacy and vision will always remain a cherished part of Smart Study Center.",
   },
     {
     name: "Mehreen Khan",
