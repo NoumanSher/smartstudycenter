@@ -97,6 +97,26 @@ const mentors = [
     rating: 4.9,
     bio: "She is a dedicated English Language Teacher at Smart Study Center, helping students strengthen their speaking, reading, writing, grammar, vocabulary, and communication skills through interactive and student-centered lessons. Her goal is to build students’ confidence, improve their fluency, and support them in achieving strong academic results.",
   },
+  {
+    name: "Ammar ",
+    title: "BS in Computer Science",
+    image: "/amar.jpeg",
+    specialization: "specializes in embedded systems and microcontroller programming",
+    experience: "10+ years",
+    students: "1500+",
+    rating: 4.9,
+    bio: "He specializes in embedded systems, IoT, microcontrollers, PCB design, firmware development, and hardware-software integration. His technical expertise includes Arduino, ESP32, Raspberry Pi, STM32, robotics, automation, sensors, and C/C++ programming. He also has experience in prototyping, debugging, and complete embedded product development. As a mentor, he focuses on practical, project-based learning and explains technical concepts in a simple and understandable way. He guides students step by step in developing strong electronics, programming, and problem-solving skills.",
+  },
+  {
+    name: "Aaminah Qureshi",
+    // title: "HR Manager",
+    image: "/miss.jpeg",
+    specialization: "Academic Mentor & Administrative Coordinator",
+    experience: "4+ years",
+    students: "1500+",
+    rating: 4.9,
+    bio: "She is a dedicated graduate who efficiently manages office operations and daily administrative responsibilities. She also coordinates online classes, student records, schedules, and various digital tasks. Her professional, organized, and supportive approach helps maintain smooth day-to-day operations. She works closely with both students and teachers to ensure effective communication and coordination. Her commitment and management skills contribute to a positive and well-organized learning environment at Smart Study Center.",
+  },
 ];
 
 export default function MentorsPage() {

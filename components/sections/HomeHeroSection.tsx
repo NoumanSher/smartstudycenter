@@ -67,9 +67,21 @@ export default function HomeHeroSection() {
           className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-gray-600 sm:text-lg md:text-xl lg:text-2xl"
         >
           Live interactive classes for students in{" "}
-          <span className="font-semibold text-gray-800">Pakistan</span>,{" "}
-          <span className="font-semibold text-gray-800">Saudi Arabia</span>, and
+          <span className="bg-gradient-to-r from-[#C71585] to-[#FF1493] bg-clip-text text-transparent">Pakistan</span>,{" "}
+          <span className="bg-gradient-to-r from-[#C71585] to-[#FF1493] bg-clip-text text-transparent">Saudi Arabia</span>, and
           around the world.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.2 }}
+          className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-gray-600 sm:text-lg md:text-xl lg:text-2xl"
+        >
+          Morning & Evening  <span className="font-semibold bg-gradient-to-r from-[#C71585] to-[#FF1493] bg-clip-text text-transparent">Classes</span>    — Available for{" "}   
+          <span className="font-semibold bg-gradient-to-r from-[#C71585] to-[#FF1493] bg-clip-text text-transparent">Regular</span>{" "}&
+          <span className="font-semibold bg-gradient-to-r from-[#C71585] to-[#FF1493] bg-clip-text text-transparent"> Private Students</span>
+          
         </motion.p>
 
         {/* CTA Buttons */}
