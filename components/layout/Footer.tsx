@@ -91,7 +91,7 @@ export default function Footer() {
               },
               {
                 Icon: Instagram,
-                href: "https://www.instagram.com/support.smartstudycenter/",
+                href: "https://www.instagram.com/smartstudycenteronline/",
               },
               {
                 Icon: Linkedin,

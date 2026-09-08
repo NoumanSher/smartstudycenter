@@ -658,7 +658,7 @@ export const coursesData: CourseDetail[] = [
     cardDescription:
       "Specialized preparation for medical (MDCAT), engineering (ECAT), NUST (NET), and university admission tests.",
     image:
-      "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "/entrytests.jpeg",
     heroHeading: "University Entry Test Master Preparation",
     heroDescription:
       "Crack top university admissions with our intensive test prep programs. Master time management, shortcut techniques, high-yield MCQs, and full-length simulated tests for MDCAT, ECAT, NET, and more.",
