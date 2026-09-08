@@ -88,7 +88,7 @@ const mentors = [
     bio: "currently serving as an Assistant Professor at the School of Engineering Management, Zhejiang Guangsha Vocational and Technical University of Construction, China.",
   },
   {
-    name: "Asma irfan",
+    name: "Asma Irfan",
     title: "English Language Teacher",
     image: "/asma.jpeg",
     specialization: "Master’s in English",
