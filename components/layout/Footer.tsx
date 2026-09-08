@@ -95,7 +95,7 @@ export default function Footer() {
               },
               {
                 Icon: Linkedin,
-                href: "https://www.linkedin.com/company/smart-study-center",
+                href: "https://www.linkedin.com/company/smartstudycenteronline/",
               },
               { Icon: Mail, href: "mailto:support.smartstudycenter@gmail.com" },
             ].map(({ Icon, href }, i) => (

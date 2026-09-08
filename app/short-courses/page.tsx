@@ -19,6 +19,7 @@ import {
   Target,
   BookOpen,
   Laptop,
+  Globe2,
 } from "lucide-react";
 
 interface ShortCourseData {
@@ -153,6 +154,44 @@ const shortCourses: ShortCourseData[] = [
     mode: "Live Online Classes + Practical AI Labs",
     certificate: "Verified Certificate of Completion",
   },
+  {
+    id: "chinese",
+    name: "Chinese Language Course",
+    shortTag: "Mandarin for All Levels",
+    tagline: "A structured Mandarin Chinese program for beginners to advanced learners.",
+    icon: Globe2,
+    description: [
+      "Our Chinese Language Program is designed for students at different stages of learning, from complete beginners to confident advanced learners.",
+      "The program is divided into Basic, Intermediate, and Advanced levels, so students can learn according to their current ability.",
+      "Each level focuses on improving speaking, listening, reading, writing, pronunciation, vocabulary, and Chinese characters through practical and interactive learning.",
+    ],
+    focusPoints: [
+      {
+        title: "Speaking & Pronunciation (Pinyin)",
+        desc: "Master the Pinyin romanization system and build confident spoken Mandarin from day one.",
+      },
+      {
+        title: "Reading & Writing Chinese Characters",
+        desc: "Learn to recognise, read, and write essential Chinese characters (Hanzi) step by step across all levels.",
+      },
+      {
+        title: "Listening Comprehension",
+        desc: "Develop real-world listening skills through native speaker audio, dialogue practice, and situational conversations.",
+      },
+      {
+        title: "Vocabulary & Grammar Structures",
+        desc: "Build a strong practical vocabulary and grasp essential Mandarin grammar patterns for fluid communication.",
+      },
+    ],
+    idealFor: [
+      "Complete beginners who have never studied Mandarin before",
+      "Students preparing for HSK examinations or university language requirements",
+      "Professionals, travellers, and curious learners wanting to connect with Chinese culture",
+    ],
+    duration: "Basic / Intermediate / Advanced Levels (Ongoing Enrolment)",
+    mode: "Live Online Classes + Recorded Revision Sessions",
+    certificate: "Verified Certificate of Completion",
+  },
 ];
 
 export default function ShortCoursesPage() {
@@ -203,24 +242,22 @@ export default function ShortCoursesPage() {
           </p>
         </div>
 
-        {/* Course Selection Tabs */}
+        {/* Course Selection Tabs — Pill Style, horizontally scrollable on mobile */}
         <div className="mb-10">
-          <div className="flex flex-wrap sm:flex-nowrap gap-3 p-1.5 bg-gray-100/90 rounded-2xl border border-gray-200/80 shadow-inner">
+          <div className="flex gap-2.5 sm:gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory">
             {shortCourses.map((course) => {
-              const Icon = course.icon;
               const isActive = course.id === activeTabId;
               return (
                 <button
                   key={course.id}
                   onClick={() => setActiveTabId(course.id)}
-                  className={`flex-1 flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 text-center ${
+                  className={`px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-200 border whitespace-nowrap shrink-0 snap-start ${
                     isActive
-                      ? "bg-[#C71585] text-white shadow-md shadow-[#C71585]/25 scale-[1.01]"
-                      : "text-gray-700 hover:text-[#C71585] hover:bg-white/80"
+                      ? "bg-[#C71585] text-white border-[#C71585] shadow-md shadow-[#C71585]/20"
+                      : "bg-white text-gray-600 border-gray-200 hover:border-[#C71585] hover:text-[#C71585]"
                   }`}
                 >
-                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-white" : "text-[#C71585]"}`} />
-                  <span className="truncate">{course.name}</span>
+                  {course.name}
                 </button>
               );
             })}

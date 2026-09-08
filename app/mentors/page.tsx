@@ -67,6 +67,26 @@ const mentors = [
     rating: 4.9,
     bio: "Miss Fatima is a dedicated Chemistry educator with a strong academic foundation and a passion for teaching. She makes complex chemical concepts easier to understand through clear explanations, practical examples, and regular practice. Her supportive guidance helps students develop confidence and achieve stronger results in Chemistry.",
   },
+  {
+    name: "Miss Uzma Sharif",
+    title: "Economics Teacher | Master’s in Economics",
+    image: "/missuzma.jpeg",
+    specialization: "Master’s in Economics",
+    experience: "8+ years",
+    students: "1500+",
+    rating: 4.9,
+    bio: "she brings strong academic understanding and a genuine passion for helping students grow. At Smart Study Center, she provides mentoring, academic guidance, motivation, and support to help students develop effective learning habits and move confidently toward their educational and career goals.",
+  },
+  {
+    name: "Dr. Furqan Sikandar",
+    title: " Assistant Professor In China",
+    image: "/chineseteacher.jpeg",
+    specialization: "Professional chinese language instructor",
+    experience: "10+ years",
+    students: "1500+",
+    rating: 4.9,
+    bio: "currently serving as an Assistant Professor at the School of Engineering Management, Zhejiang Guangsha Vocational and Technical University of Construction, China.",
+  },
 ];
 
 export default function MentorsPage() {

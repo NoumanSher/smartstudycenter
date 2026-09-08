@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.smartstudycenter.com'),
-  title: 'Smart Study Center - Online Classes for Class 6th to A-Levels & Entry Tests | Expert Mentorship',
+  title: 'Smart Study Center - Online Classes for Class 4th to A-Levels & Entry Tests | Expert Mentorship',
   description: 'Quality online education for classes 4th through A-levels, Intermediate, and University Entry Tests. Expert mentors, personalized learning, and proven results for students in Pakistan, Saudi Arabia, and worldwide.',
   keywords: 'online classes 8th grade, Pakistan School System, Love to know, Pakistan school system in Saudi Arabia, A-Levels online courses, O-Levels online courses, Intermediate FSc tuition, online tutoring Pakistan, distance learning education, MDCAT preparation online, ECAT preparation online',
   authors: [{ name: 'Smart Study Center' }],

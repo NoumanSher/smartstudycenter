@@ -218,7 +218,8 @@ export default function ContactPage() {
                 <div className="flex gap-2.5 flex-wrap">
                   {[
                     { platform: 'Facebook', href: "https://web.facebook.com/profile.php?id=61579559790036" },
-                    { platform: 'Instagram', href: "https://www.instagram.com/smartstudycenteronline" }
+                    { platform: 'Instagram', href: "https://www.instagram.com/smartstudycenteronline" },
+                    { platform: 'Linkedin', href: "https://www.linkedin.com/company/smartstudycenteronline/" }
                   ].map(({ platform, href }) => (
                     <a
                       key={platform}
