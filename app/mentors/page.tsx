@@ -87,6 +87,16 @@ const mentors = [
     rating: 4.9,
     bio: "currently serving as an Assistant Professor at the School of Engineering Management, Zhejiang Guangsha Vocational and Technical University of Construction, China.",
   },
+  {
+    name: "Asma irfan",
+    title: "English Language Teacher",
+    image: "/asma.jpeg",
+    specialization: "Master’s in English",
+    experience: "10+ years",
+    students: "1500+",
+    rating: 4.9,
+    bio: "She is a dedicated English Language Teacher at Smart Study Center, helping students strengthen their speaking, reading, writing, grammar, vocabulary, and communication skills through interactive and student-centered lessons. Her goal is to build students’ confidence, improve their fluency, and support them in achieving strong academic results.",
+  },
 ];
 
 export default function MentorsPage() {
