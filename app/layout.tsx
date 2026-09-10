@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.smartstudycenter.com',
     title: 'Smart Study Center - Online Education & Mentorship',
-    description: 'Expert online education with personalized mentorship for classes 4th through A-levels, Intermediate, and Entry Tests.',
+    description: 'Expert online education with personalized mentorship for classes 6th through A-Levels, Intermediate, and Entry Tests.',
     siteName: 'Smart Study Center',
     images: [
       {
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: 'Smart Study Center - Online Education & Mentorship',
-    description: 'Expert online education with personalized mentorship for classes 4th through A-levels, Intermediate, and Entry Tests.',
+    description: 'Expert online education with personalized mentorship for classes 6th through A-Levels, Intermediate, and Entry Tests.',
     images: ['/icon.png'],
   },
   icons: {
@@ -71,6 +72,35 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        {/* Meta Pixel Code */}
+        <Script
+          id="meta-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1072549885145844');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1072549885145844&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+
         <Navbar />
         {children}
         <Footer />
