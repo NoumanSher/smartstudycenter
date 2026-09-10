@@ -244,7 +244,7 @@ export default function ShortCoursesPage() {
 
         {/* Course Selection Tabs — Pill Style, horizontally scrollable on mobile */}
         <div className="mb-10">
-          <div className="flex gap-2.5 sm:gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory">
+          <div className="flex gap-2.5 sm:gap-3 overflow-x-auto pb-3 pt-1 mobile-theme-scrollbar snap-x snap-mandatory">
             {shortCourses.map((course) => {
               const isActive = course.id === activeTabId;
               return (

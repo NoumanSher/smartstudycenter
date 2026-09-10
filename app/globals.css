@@ -88,8 +88,41 @@
   animation: float 3s ease-in-out infinite;
 }
 
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-} */
+/* Custom theme scrollbar for tabs on mobile only */
+@media (max-width: 639px) {
+  .mobile-theme-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #C71585 rgba(199, 21, 133, 0.12);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-theme-scrollbar::-webkit-scrollbar {
+    height: 4px;
+    display: block !important;
+  }
+
+  .mobile-theme-scrollbar::-webkit-scrollbar-track {
+    background: rgba(199, 21, 133, 0.12);
+    border-radius: 9999px;
+  }
+
+  .mobile-theme-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #C71585 0%, #FF1493 100%);
+    border-radius: 9999px;
+  }
+
+  .mobile-theme-scrollbar::-webkit-scrollbar-thumb:active {
+    background: #b01376;
+  }
+}
+
+@media (min-width: 640px) {
+  .mobile-theme-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .mobile-theme-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
