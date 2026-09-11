@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Courses", href: "/courses" },
   { name: "Short Courses", href: "/short-courses" },
   { name: "Mentors", href: "/mentors" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -35,30 +36,30 @@ export default function Navbar() {
       }`}
     >
       <div className="lg:max-w-7xl w-full  lg:mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-20 gap-2 xl:gap-4">
           <Link
             href="/"
-            className="flex items-center h-full group py-2"
+            className="flex items-center h-full group py-2 shrink-0"
           >
             <div className="relative flex items-center">
               <Image
                 src="/smart-study-center-logo.png"
                 alt="Smart Study Center"
-                width={260}
-                height={65}
+                width={240}
+                height={60}
                 quality={100}
-                className="h-10 sm:h-12 md:h-[70px] w-auto object-contain"
+                className="h-9 sm:h-11 md:h-12 lg:h-11 xl:h-14 w-auto object-contain"
                 priority
               />
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-3.5 xl:space-x-5 2xl:space-x-7">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-[#C71585] font-medium transition-colors relative group"
+                className="text-gray-700 hover:text-[#C71585] font-medium transition-colors relative group whitespace-nowrap text-[13px] xl:text-sm 2xl:text-base py-1"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C71585] group-hover:w-full transition-all duration-300"></span>
@@ -66,7 +67,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="px-6 py-2 bg-gradient-to-r from-[#C71585] to-[#FF1493] rounded-full text-white  font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="px-4 py-2 xl:px-5 xl:py-2.5 bg-gradient-to-r from-[#C71585] to-[#FF1493] rounded-full text-white font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap text-xs xl:text-sm shrink-0 shadow-md shadow-[#C71585]/20"
             >
               Get Started
             </Link>
