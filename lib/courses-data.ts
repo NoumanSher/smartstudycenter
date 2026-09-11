@@ -29,219 +29,7 @@ export interface CourseDetail {
 }
 
 export const coursesData: CourseDetail[] = [
-  {
-    slug: "juniors",
-    title: "Junior Section (Classes 4th - 8th)",
-    shortTitle: "Juniors",
-    category: "Junior Level",
-    level: "Beginner to Middle",
-    rating: 4.9,
-    students: "4200+",
-    duration: "Academic Year",
-    price: "$199",
-    cardDescription:
-      "Foundational courses for junior students building strong academic basics in English, Math, and Sciences.",
-    image:"/Juniors.jpeg",
-    heroHeading: "Junior Academic Excellence (Classes 4th to 8th)",
-    heroDescription:
-      "Inspire curiosity and strong study habits from an early age. Our junior programs nurture confident learners through interactive teaching, foundational mathematics, reading comprehension, and science experiments.",
-    tabs: [
-      {
-        id: "class-8",
-        label: "Class 8th",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Class 8th is the decisive bridge year before high school and board exams. Our program solidifies concepts in algebra, geometry, scientific principles, and English communication.",
-        duration: "Academic Session",
-        eligibility: "Promoted from Class 7th.",
-        keySubjects: [
-          "Mathematics",
-          "General Science",
-          "English Grammar & Writing",
-          "Urdu",
-          "Computer Literacy",
-        ],
-        documentsRequired: [
-          "Class 7th School Report Card",
-          "Copy of Student B-Form",
-          "Copy of Parent CNIC",
-          "1 Passport Size Photographs",
-        ],
-        highlights: [
-          "Bridge curriculum preparing directly for 9th Matric or O-Levels",
-          "Daily homework assistance and weekly review quizzes",
-          "Friendly, interactive mentor guidance",
-        ],
-      },
-      {
-        id: "class-7",
-        label: "Class 7th",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Focuses on developing logical reasoning, problem-solving in mathematics, and clear written English expression through engaging live lessons.",
-        duration: "Academic Session",
-        eligibility: "Promoted from Class 6th.",
-        keySubjects: [
-          "Mathematics",
-          "Science",
-          "English",
-          "Urdu",
-          "Social Studies",
-        ],
-        documentsRequired: [
-          "Class 6th Report Card",
-          "Copy of B-Form",
-          "1 Passport Photos",
-        ],
-        highlights: [
-          "Visual learning modules",
-          "Continuous positive reinforcement and confidence building",
-        ],
-      },
-      {
-        id: "class-6",
-        label: "Class 6th",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Welcomes young learners into middle school with supportive tutoring that makes numbers and science concepts easy and enjoyable.",
-        duration: "Academic Session",
-        eligibility: "Completed primary school (Class 5th).",
-        keySubjects: [
-          "Mathematics",
-          "General Science",
-          "English",
-          "Urdu",
-          "Computer Basics",
-        ],
-        documentsRequired: [
-          "Class 5th Report Card / Certificate",
-          "Copy of B-Form",
-          "1 Passport Photos",
-        ],
-        highlights: [
-          "Gentle pace with high interactive participation",
-          "Vocabulary and arithmetic drills",
-        ],
-      },
-      {
-        id: "foundation-skills",
-        label: "Foundation English & Math",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "A specialized booster course designed for students who need extra support to catch up in English grammar, speaking, reading, and mental math.",
-        duration: "2-3 Months",
-        keySubjects: [
-          "Spoken & Written English",
-          "Basic Arithmetic & Fractions",
-          "Reading Comprehension",
-        ],
-        documentsRequired: ["Copy of Student B-Form", "1 Passport Photos"],
-        highlights: [
-          "Zero-judgment, highly encouraging environment",
-          "Rapid visible improvements",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "matric",
-    title: "Matriculation Programs (9th & 10th)",
-    shortTitle: "Matric",
-    category: "Matriculation",
-    level: "Secondary",
-    rating: 4.7,
-    students: "3500+",
-    duration: "6 Months",
-    price: "$299",
-    cardDescription:
-      "Matriculation level courses covering Federal (FBISE) and Provincial Boards with comprehensive exam focus.",
-    image:
-      "/Matriculation.jpeg",
-    heroHeading: "Matriculation (9th & 10th Class) Programs",
-    heroDescription:
-      "Our Matric sessions provide complete academic support for students preparing for board examinations. We cover every subject with clear concepts, structured notes, and regular practice. Experienced teachers focus on important topics, past papers, and effective exam techniques. Students can ask questions freely and receive guidance whenever they need it. Frequent tests and assessments help identify weak areas and improve performance. We help Matric students prepare confidently for excellent results and future studies.",
-    tabs: [
-      {
-        id: "matric-computer-science",
-        label: "Matric Computer Science",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Matric Computer Science is for students who are interested in technology, programming, and digital learning. The group usually includes Computer Science, Mathematics, Physics, and Chemistry as major subjects. Our teachers build strong concepts through clear lessons, practical examples, and regular problem-solving practice. Students learn the basics of computer systems, programming logic, and important scientific concepts. We provide notes, tests, past-paper practice, and individual guidance for board examination preparation. This group creates a strong foundation for future studies in ICS, Software Engineering, IT, Artificial Intelligence, and Computing.",
-        duration: "6 Months",
-        eligibility: "Passed Class 8th examination.",
-        keySubjects: [
-          "Mathematics (SLO Based)",
-          "Physics",
-          "Chemistry",
-          "Biology / Computer Science",
-          "English, Urdu & Islamiyat",
-        ],
-        documentsRequired: [
-          "Class 8th Pass Certificate / School Result Card",
-          "Copy of Student B-Form",
-          "Copy of Father / Guardian CNIC",
-          "1 Passport Size Photographs",
-        ],
-        highlights: [
-          "FBISE & Provincial board SLO conceptual methodology",
-          "Complete solved exercises and conceptual question banks",
-          "Monthly model paper test series",
-        ],
-      },
-      {
-        id: "matric-medical-science",
-        label: "Matric Medical Science",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Matric Medical Science is for students who are interested in Biology, health sciences, and medical-related careers. The group focuses on Biology, Physics, Chemistry, and Mathematics with strong conceptual understanding. Our subject-specialist teachers explain scientific topics clearly and help students learn difficult concepts with confidence. Regular tests, notes, revision sessions, and past-paper practice prepare students for board examinations. Individual attention helps students improve weak areas and develop effective study habits. This group provides a strong foundation for FSc Pre-Medical and future fields such as medicine, pharmacy, nursing, and health sciences.",
-        duration: "6 Months",
-        eligibility: "Appeared in / Passed 9th Class board exam.",
-        keySubjects: [
-          "Mathematics (Theory & Theorems)",
-          "Physics (Theory & Practical Preparation)",
-          "Chemistry (Chemical Equations & Numericals)",
-          "Biology / Computer Science",
-          "English, Urdu & Pakistan Studies",
-        ],
-        documentsRequired: [
-          "9th Class Board Roll Number Slip / Result Card",
-          "Copy of Student B-Form",
-          "Copy of Parent CNIC",
-          "1 Passport Size Photographs",
-        ],
-        highlights: [
-          "Board paper presentation techniques and rubric guidance",
-          "Special focus on theorems and numericals scoring",
-          "Pre-board grand mock exams",
-        ],
-      },
-      {
-        id: "matric-arts",
-        label: "Matric Arts",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Matric Arts is suitable for students interested in humanities, social studies, languages, and creative subjects. It offers a balanced learning path that develops knowledge, communication, writing, and critical-thinking skills. Our teachers explain every subject clearly and provide individual guidance according to each student’s needs. Students receive organized notes, regular tests, revision sessions, and past-paper practice. We help them improve their writing style, understanding, and confidence for board examinations. Matric Arts provides a strong foundation for FA and future studies in education, media, law, business, and social sciences.",
-        duration: "6 Months",
-        eligibility: "Students currently in 8th Class.",
-        keySubjects: [
-          "General Mathematics",
-          "General Science",
-          "Civics / Education",
-          "English & Urdu",
-        ],
-        documentsRequired: [
-          "7th / 8th Grade School Report Card",
-          "Copy of B-Form",
-          "1 Passport Photos",
-        ],
-        highlights: [
-          "Early syllabus start for relaxed study pace throughout the year",
-          "Eliminates fear of board sciences",
-        ],
-      },
-    ],
-  },
-  {
+     {
     slug: "intermediate",
     title: "Intermediate Programs",
     shortTitle: "Intermediate",
@@ -426,6 +214,221 @@ export const coursesData: CourseDetail[] = [
       },
     ],
   },
+  {
+    slug: "matric",
+    title: "Matriculation Programs (9th & 10th)",
+    shortTitle: "Matric",
+    category: "Matriculation",
+    level: "Secondary",
+    rating: 4.7,
+    students: "3500+",
+    duration: "6 Months",
+    price: "$299",
+    cardDescription:
+      "Matriculation level courses covering Federal (FBISE) and Provincial Boards with comprehensive exam focus.",
+    image:
+      "/Matriculation.jpeg",
+    heroHeading: "Matriculation (9th & 10th Class) Programs",
+    heroDescription:
+      "Our Matric sessions provide complete academic support for students preparing for board examinations. We cover every subject with clear concepts, structured notes, and regular practice. Experienced teachers focus on important topics, past papers, and effective exam techniques. Students can ask questions freely and receive guidance whenever they need it. Frequent tests and assessments help identify weak areas and improve performance. We help Matric students prepare confidently for excellent results and future studies.",
+    tabs: [
+      {
+        id: "matric-computer-science",
+        label: "Matric Computer Science",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Matric Computer Science is for students who are interested in technology, programming, and digital learning. The group usually includes Computer Science, Mathematics, Physics, and Chemistry as major subjects. Our teachers build strong concepts through clear lessons, practical examples, and regular problem-solving practice. Students learn the basics of computer systems, programming logic, and important scientific concepts. We provide notes, tests, past-paper practice, and individual guidance for board examination preparation. This group creates a strong foundation for future studies in ICS, Software Engineering, IT, Artificial Intelligence, and Computing.",
+        duration: "6 Months",
+        eligibility: "Passed Class 8th examination.",
+        keySubjects: [
+          "Mathematics (SLO Based)",
+          "Physics",
+          "Chemistry",
+          "Biology / Computer Science",
+          "English, Urdu & Islamiyat",
+        ],
+        documentsRequired: [
+          "Class 8th Pass Certificate / School Result Card",
+          "Copy of Student B-Form",
+          "Copy of Father / Guardian CNIC",
+          "1 Passport Size Photographs",
+        ],
+        highlights: [
+          "FBISE & Provincial board SLO conceptual methodology",
+          "Complete solved exercises and conceptual question banks",
+          "Monthly model paper test series",
+        ],
+      },
+      {
+        id: "matric-medical-science",
+        label: "Matric Medical Science",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Matric Medical Science is for students who are interested in Biology, health sciences, and medical-related careers. The group focuses on Biology, Physics, Chemistry, and Mathematics with strong conceptual understanding. Our subject-specialist teachers explain scientific topics clearly and help students learn difficult concepts with confidence. Regular tests, notes, revision sessions, and past-paper practice prepare students for board examinations. Individual attention helps students improve weak areas and develop effective study habits. This group provides a strong foundation for FSc Pre-Medical and future fields such as medicine, pharmacy, nursing, and health sciences.",
+        duration: "6 Months",
+        eligibility: "Appeared in / Passed 9th Class board exam.",
+        keySubjects: [
+          "Mathematics (Theory & Theorems)",
+          "Physics (Theory & Practical Preparation)",
+          "Chemistry (Chemical Equations & Numericals)",
+          "Biology / Computer Science",
+          "English, Urdu & Pakistan Studies",
+        ],
+        documentsRequired: [
+          "9th Class Board Roll Number Slip / Result Card",
+          "Copy of Student B-Form",
+          "Copy of Parent CNIC",
+          "1 Passport Size Photographs",
+        ],
+        highlights: [
+          "Board paper presentation techniques and rubric guidance",
+          "Special focus on theorems and numericals scoring",
+          "Pre-board grand mock exams",
+        ],
+      },
+      {
+        id: "matric-arts",
+        label: "Matric Arts",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Matric Arts is suitable for students interested in humanities, social studies, languages, and creative subjects. It offers a balanced learning path that develops knowledge, communication, writing, and critical-thinking skills. Our teachers explain every subject clearly and provide individual guidance according to each student’s needs. Students receive organized notes, regular tests, revision sessions, and past-paper practice. We help them improve their writing style, understanding, and confidence for board examinations. Matric Arts provides a strong foundation for FA and future studies in education, media, law, business, and social sciences.",
+        duration: "6 Months",
+        eligibility: "Students currently in 8th Class.",
+        keySubjects: [
+          "General Mathematics",
+          "General Science",
+          "Civics / Education",
+          "English & Urdu",
+        ],
+        documentsRequired: [
+          "7th / 8th Grade School Report Card",
+          "Copy of B-Form",
+          "1 Passport Photos",
+        ],
+        highlights: [
+          "Early syllabus start for relaxed study pace throughout the year",
+          "Eliminates fear of board sciences",
+        ],
+      },
+    ],
+  },
+   {
+    slug: "juniors",
+    title: "Junior Section (Classes 4th - 8th)",
+    shortTitle: "Juniors",
+    category: "Junior Level",
+    level: "Beginner to Middle",
+    rating: 4.9,
+    students: "4200+",
+    duration: "Academic Year",
+    price: "$199",
+    cardDescription:
+      "Foundational courses for junior students building strong academic basics in English, Math, and Sciences.",
+    image:"/Juniors.jpeg",
+    heroHeading: "Junior Academic Excellence (Classes 4th to 8th)",
+    heroDescription:
+      "Inspire curiosity and strong study habits from an early age. Our junior programs nurture confident learners through interactive teaching, foundational mathematics, reading comprehension, and science experiments.",
+    tabs: [
+      {
+        id: "class-8",
+        label: "Class 8th",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Class 8th is the decisive bridge year before high school and board exams. Our program solidifies concepts in algebra, geometry, scientific principles, and English communication.",
+        duration: "Academic Session",
+        eligibility: "Promoted from Class 7th.",
+        keySubjects: [
+          "Mathematics",
+          "General Science",
+          "English Grammar & Writing",
+          "Urdu",
+          "Computer Literacy",
+        ],
+        documentsRequired: [
+          "Class 7th School Report Card",
+          "Copy of Student B-Form",
+          "Copy of Parent CNIC",
+          "1 Passport Size Photographs",
+        ],
+        highlights: [
+          "Bridge curriculum preparing directly for 9th Matric or O-Levels",
+          "Daily homework assistance and weekly review quizzes",
+          "Friendly, interactive mentor guidance",
+        ],
+      },
+      {
+        id: "class-7",
+        label: "Class 7th",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Focuses on developing logical reasoning, problem-solving in mathematics, and clear written English expression through engaging live lessons.",
+        duration: "Academic Session",
+        eligibility: "Promoted from Class 6th.",
+        keySubjects: [
+          "Mathematics",
+          "Science",
+          "English",
+          "Urdu",
+          "Social Studies",
+        ],
+        documentsRequired: [
+          "Class 6th Report Card",
+          "Copy of B-Form",
+          "1 Passport Photos",
+        ],
+        highlights: [
+          "Visual learning modules",
+          "Continuous positive reinforcement and confidence building",
+        ],
+      },
+      {
+        id: "class-6",
+        label: "Class 6th",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Welcomes young learners into middle school with supportive tutoring that makes numbers and science concepts easy and enjoyable.",
+        duration: "Academic Session",
+        eligibility: "Completed primary school (Class 5th).",
+        keySubjects: [
+          "Mathematics",
+          "General Science",
+          "English",
+          "Urdu",
+          "Computer Basics",
+        ],
+        documentsRequired: [
+          "Class 5th Report Card / Certificate",
+          "Copy of B-Form",
+          "1 Passport Photos",
+        ],
+        highlights: [
+          "Gentle pace with high interactive participation",
+          "Vocabulary and arithmetic drills",
+        ],
+      },
+      {
+        id: "foundation-skills",
+        label: "Foundation English & Math",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "A specialized booster course designed for students who need extra support to catch up in English grammar, speaking, reading, and mental math.",
+        duration: "2-3 Months",
+        keySubjects: [
+          "Spoken & Written English",
+          "Basic Arithmetic & Fractions",
+          "Reading Comprehension",
+        ],
+        documentsRequired: ["Copy of Student B-Form", "1 Passport Photos"],
+        highlights: [
+          "Zero-judgment, highly encouraging environment",
+          "Rapid visible improvements",
+        ],
+      },
+    ],
+  },
+ 
+ 
+
   {
     slug: "a-level",
     title: "A Level Programs",
