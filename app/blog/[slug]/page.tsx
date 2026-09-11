@@ -20,7 +20,7 @@ interface BlogPostPageProps {
 // Generate static params for existing posts
 export async function generateStaticParams() {
   try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return [];
+    if (!process.env.NEXT_SANITY_PROJECT_ID) return [];
     const slugs: string[] = await client.fetch(postSlugsQuery);
     return slugs.map((slug) => ({ slug }));
   } catch (error) {

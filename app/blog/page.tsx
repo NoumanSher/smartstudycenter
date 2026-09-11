@@ -10,7 +10,7 @@ export const revalidate = 60; // Incremental Static Regeneration every 60s
 
 async function getPosts(): Promise<Post[]> {
   try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    if (!process.env.NEXT_SANITY_PROJECT_ID) {
       return [];
     }
     const posts = await client.fetch(postsQuery);
