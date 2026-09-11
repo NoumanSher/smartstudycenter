@@ -29,7 +29,7 @@ export interface CourseDetail {
 }
 
 export const coursesData: CourseDetail[] = [
-     {
+  {
     slug: "intermediate",
     title: "Intermediate Programs",
     shortTitle: "Intermediate",
@@ -41,8 +41,7 @@ export const coursesData: CourseDetail[] = [
     price: "$449",
     cardDescription:
       "Intermediate level education covering pre-engineering, pre-medical, ICS, and commerce streams.",
-    image:
-      "/intermediate.jpeg",
+    image: "/intermediate.jpeg",
     heroHeading: "Intermediate Programs",
     heroDescription:
       "Intermediate is a crucial stage where students need focused guidance to understand every subject properly. At Smart Study Center, each student receives individual attention according to their academic needs. Our subject-specialist teachers explain concepts clearly and help students overcome their weak areas. We provide complete support through regular classes, notes, practice sessions, and assessments. Students are guided to improve their study routine, confidence, and examination performance. Our goal is to help every Intermediate student achieve strong results and choose a successful future path.",
@@ -226,8 +225,7 @@ export const coursesData: CourseDetail[] = [
     price: "$299",
     cardDescription:
       "Matriculation level courses covering Federal (FBISE) and Provincial Boards with comprehensive exam focus.",
-    image:
-      "/Matriculation.jpeg",
+    image: "/Matriculation.jpeg",
     heroHeading: "Matriculation (9th & 10th Class) Programs",
     heroDescription:
       "Our Matric sessions provide complete academic support for students preparing for board examinations. We cover every subject with clear concepts, structured notes, and regular practice. Experienced teachers focus on important topics, past papers, and effective exam techniques. Students can ask questions freely and receive guidance whenever they need it. Frequent tests and assessments help identify weak areas and improve performance. We help Matric students prepare confidently for excellent results and future studies.",
@@ -312,122 +310,6 @@ export const coursesData: CourseDetail[] = [
       },
     ],
   },
-   {
-    slug: "juniors",
-    title: "Junior Section (Classes 4th - 8th)",
-    shortTitle: "Juniors",
-    category: "Junior Level",
-    level: "Beginner to Middle",
-    rating: 4.9,
-    students: "4200+",
-    duration: "Academic Year",
-    price: "$199",
-    cardDescription:
-      "Foundational courses for junior students building strong academic basics in English, Math, and Sciences.",
-    image:"/Juniors.jpeg",
-    heroHeading: "Junior Academic Excellence (Classes 4th to 8th)",
-    heroDescription:
-      "Inspire curiosity and strong study habits from an early age. Our junior programs nurture confident learners through interactive teaching, foundational mathematics, reading comprehension, and science experiments.",
-    tabs: [
-      {
-        id: "class-8",
-        label: "Class 8th",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Class 8th is the decisive bridge year before high school and board exams. Our program solidifies concepts in algebra, geometry, scientific principles, and English communication.",
-        duration: "Academic Session",
-        eligibility: "Promoted from Class 7th.",
-        keySubjects: [
-          "Mathematics",
-          "General Science",
-          "English Grammar & Writing",
-          "Urdu",
-          "Computer Literacy",
-        ],
-        documentsRequired: [
-          "Class 7th School Report Card",
-          "Copy of Student B-Form",
-          "Copy of Parent CNIC",
-          "1 Passport Size Photographs",
-        ],
-        highlights: [
-          "Bridge curriculum preparing directly for 9th Matric or O-Levels",
-          "Daily homework assistance and weekly review quizzes",
-          "Friendly, interactive mentor guidance",
-        ],
-      },
-      {
-        id: "class-7",
-        label: "Class 7th",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Focuses on developing logical reasoning, problem-solving in mathematics, and clear written English expression through engaging live lessons.",
-        duration: "Academic Session",
-        eligibility: "Promoted from Class 6th.",
-        keySubjects: [
-          "Mathematics",
-          "Science",
-          "English",
-          "Urdu",
-          "Social Studies",
-        ],
-        documentsRequired: [
-          "Class 6th Report Card",
-          "Copy of B-Form",
-          "1 Passport Photos",
-        ],
-        highlights: [
-          "Visual learning modules",
-          "Continuous positive reinforcement and confidence building",
-        ],
-      },
-      {
-        id: "class-6",
-        label: "Class 6th",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "Welcomes young learners into middle school with supportive tutoring that makes numbers and science concepts easy and enjoyable.",
-        duration: "Academic Session",
-        eligibility: "Completed primary school (Class 5th).",
-        keySubjects: [
-          "Mathematics",
-          "General Science",
-          "English",
-          "Urdu",
-          "Computer Basics",
-        ],
-        documentsRequired: [
-          "Class 5th Report Card / Certificate",
-          "Copy of B-Form",
-          "1 Passport Photos",
-        ],
-        highlights: [
-          "Gentle pace with high interactive participation",
-          "Vocabulary and arithmetic drills",
-        ],
-      },
-      {
-        id: "foundation-skills",
-        label: "Foundation English & Math",
-        aboutTitle: "About Program",
-        aboutDescription:
-          "A specialized booster course designed for students who need extra support to catch up in English grammar, speaking, reading, and mental math.",
-        duration: "2-3 Months",
-        keySubjects: [
-          "Spoken & Written English",
-          "Basic Arithmetic & Fractions",
-          "Reading Comprehension",
-        ],
-        documentsRequired: ["Copy of Student B-Form", "1 Passport Photos"],
-        highlights: [
-          "Zero-judgment, highly encouraging environment",
-          "Rapid visible improvements",
-        ],
-      },
-    ],
-  },
- 
- 
 
   {
     slug: "a-level",
@@ -441,8 +323,7 @@ export const coursesData: CourseDetail[] = [
     price: "$399",
     cardDescription:
       "Comprehensive preparation for Cambridge and Edexcel Advanced Level examinations with in-depth subject mastery.",
-    image:
-      "/A levels.jpeg",
+    image: "/A levels.jpeg",
     heroHeading: "Cambridge & Edexcel A-Level Programs",
     heroDescription:
       "Our A-Level academic tracks are structured to help students achieve straight A*s and secure admissions into prestigious universities worldwide. Experience top-tier mentorship, topical past-paper drills, and marking scheme mastery.",
@@ -571,8 +452,7 @@ export const coursesData: CourseDetail[] = [
     price: "$349",
     cardDescription:
       "Complete Cambridge  Level course covering core subjects, Cambridge syllabus, and exam preparation strategies.",
-    image:
-      "/o levels.jpeg",
+    image: "/o levels.jpeg",
     heroHeading: "Cambridge O-Level & IGCSE Programs",
     heroDescription:
       "Our O Level sessions provide focused support for students following the Cambridge curriculum. We make difficult concepts easier through clear teaching, practical examples, and guided practice. Students receive help with syllabus coverage, topical questions, and past-paper preparation. Our teachers emphasize critical thinking, time management, and effective answering techniques. Individual attention helps every student improve in the subjects they find challenging. We prepare O Level students to achieve their best possible grades with confidence.",
@@ -694,8 +574,7 @@ export const coursesData: CourseDetail[] = [
     price: "$279",
     cardDescription:
       "Specialized preparation for medical (MDCAT), engineering (ECAT), NUST (NET), and university admission tests.",
-    image:
-      "/entrytests.jpeg",
+    image: "/entrytests.jpeg",
     heroHeading: "University Entry Test Master Preparation",
     heroDescription:
       "Crack top university admissions with our intensive test prep programs. Master time management, shortcut techniques, high-yield MCQs, and full-length simulated tests for MDCAT, ECAT, NET, and more.",
@@ -792,6 +671,120 @@ export const coursesData: CourseDetail[] = [
         ],
         highlights: [
           "Fast-paced analytical reasoning and negative marking management",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "juniors",
+    title: "Junior Section (Classes 4th - 8th)",
+    shortTitle: "Juniors",
+    category: "Junior Level",
+    level: "Beginner to Middle",
+    rating: 4.9,
+    students: "4200+",
+    duration: "Academic Year",
+    price: "$199",
+    cardDescription:
+      "Foundational courses for junior students building strong academic basics in English, Math, and Sciences.",
+    image: "/Juniors.jpeg",
+    heroHeading: "Junior Academic Excellence (Classes 4th to 8th)",
+    heroDescription:
+      "Inspire curiosity and strong study habits from an early age. Our junior programs nurture confident learners through interactive teaching, foundational mathematics, reading comprehension, and science experiments.",
+    tabs: [
+      {
+        id: "class-8",
+        label: "Class 8th",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Class 8th is the decisive bridge year before high school and board exams. Our program solidifies concepts in algebra, geometry, scientific principles, and English communication.",
+        duration: "Academic Session",
+        eligibility: "Promoted from Class 7th.",
+        keySubjects: [
+          "Mathematics",
+          "General Science",
+          "English Grammar & Writing",
+          "Urdu",
+          "Computer Literacy",
+        ],
+        documentsRequired: [
+          "Class 7th School Report Card",
+          "Copy of Student B-Form",
+          "Copy of Parent CNIC",
+          "1 Passport Size Photographs",
+        ],
+        highlights: [
+          "Bridge curriculum preparing directly for 9th Matric or O-Levels",
+          "Daily homework assistance and weekly review quizzes",
+          "Friendly, interactive mentor guidance",
+        ],
+      },
+      {
+        id: "class-7",
+        label: "Class 7th",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Focuses on developing logical reasoning, problem-solving in mathematics, and clear written English expression through engaging live lessons.",
+        duration: "Academic Session",
+        eligibility: "Promoted from Class 6th.",
+        keySubjects: [
+          "Mathematics",
+          "Science",
+          "English",
+          "Urdu",
+          "Social Studies",
+        ],
+        documentsRequired: [
+          "Class 6th Report Card",
+          "Copy of B-Form",
+          "1 Passport Photos",
+        ],
+        highlights: [
+          "Visual learning modules",
+          "Continuous positive reinforcement and confidence building",
+        ],
+      },
+      {
+        id: "class-6",
+        label: "Class 6th",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "Welcomes young learners into middle school with supportive tutoring that makes numbers and science concepts easy and enjoyable.",
+        duration: "Academic Session",
+        eligibility: "Completed primary school (Class 5th).",
+        keySubjects: [
+          "Mathematics",
+          "General Science",
+          "English",
+          "Urdu",
+          "Computer Basics",
+        ],
+        documentsRequired: [
+          "Class 5th Report Card / Certificate",
+          "Copy of B-Form",
+          "1 Passport Photos",
+        ],
+        highlights: [
+          "Gentle pace with high interactive participation",
+          "Vocabulary and arithmetic drills",
+        ],
+      },
+      {
+        id: "foundation-skills",
+        label: "Foundation English & Math",
+        aboutTitle: "About Program",
+        aboutDescription:
+          "A specialized booster course designed for students who need extra support to catch up in English grammar, speaking, reading, and mental math.",
+        duration: "2-3 Months",
+        keySubjects: [
+          "Spoken & Written English",
+          "Basic Arithmetic & Fractions",
+          "Reading Comprehension",
+        ],
+        documentsRequired: ["Copy of Student B-Form", "1 Passport Photos"],
+        highlights: [
+          "Zero-judgment, highly encouraging environment",
+          "Rapid visible improvements",
         ],
       },
     ],
