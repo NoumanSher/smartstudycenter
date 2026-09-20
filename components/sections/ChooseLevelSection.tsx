@@ -32,8 +32,8 @@ const levels = [
     slug: "intermediate",
     description: (
       <>
-        F.Sc. (Pre-Medical & Pre- Engineering), I.C.S.,
-        <br /> G.Sc. & F.A.
+        F.Sc. (Pre-Medical & Pre- Engineering), I.C.S,
+        <br /> G.Sc , F.A & I.Com
       </>
     ),
   },
