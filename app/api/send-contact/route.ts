@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, phone, gradeLevel, message } = body;
+    const { firstName, lastName, email, phone, country, city, gradeLevel, message } = body;
 
     // Validate required fields
     if (!firstName || !lastName || !email || !phone || !gradeLevel || !message) {
@@ -27,6 +27,8 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('Attempting to send email with Resend...');
+
+    const locationDisplay = [city, country].filter(Boolean).join(', ') || 'Not specified';
 
     // Email HTML template
     const emailHtml = `
@@ -97,7 +99,11 @@ export async function POST(request: NextRequest) {
                 <span class="value">${phone}</span>
               </div>
               <div class="field">
-                <span class="label">Grade Level:</span>
+                <span class="label">Location (Country & City):</span>
+                <span class="value">${locationDisplay}</span>
+              </div>
+              <div class="field">
+                <span class="label">Grade Level / Program:</span>
                 <span class="value">${gradeLevel}</span>
               </div>
               <div class="field">
@@ -123,7 +129,7 @@ export async function POST(request: NextRequest) {
         from: process.env.RESEND_FROM_EMAIL || 'Smart Study Center <support@smartstudycenter.com>',
         to: [recipientEmail],
         reply_to: email,
-        subject: `New Inquiry from ${firstName} ${lastName} (${gradeLevel})`,
+        subject: `New Inquiry from ${firstName} ${lastName} (${locationDisplay} • ${gradeLevel})`,
         html: emailHtml,
       }),
     });

@@ -14,9 +14,38 @@ interface FormErrors {
   lastName?: string;
   email?: string;
   phone?: string;
+  country?: string;
+  city?: string;
   gradeLevel?: string;
   message?: string;
 }
+
+const countriesList = [
+  { code: 'pk', name: 'Pakistan', flag: '🇵🇰' },
+  { code: 'sa', name: 'Saudi Arabia', flag: '🇸🇦' },
+  { code: 'ae', name: 'United Arab Emirates', flag: '🇦🇪' },
+  { code: 'qa', name: 'Qatar', flag: '🇶🇦' },
+  { code: 'om', name: 'Oman', flag: '🇴🇲' },
+  { code: 'kw', name: 'Kuwait', flag: '🇰🇼' },
+  { code: 'bh', name: 'Bahrain', flag: '🇧🇭' },
+  { code: 'uk', name: 'United Kingdom', flag: '🇬🇧' },
+  { code: 'us', name: 'United States', flag: '🇺🇸' },
+  { code: 'ca', name: 'Canada', flag: '🇨🇦' },
+  { code: 'other', name: 'Other Country', flag: '🌍' },
+];
+
+const citiesByCountry: Record<string, string[]> = {
+  pk: ['Lahore', 'Karachi', 'Islamabad', 'Rawalpindi', 'Faisalabad', 'Multan', 'Peshawar', 'Gujranwala', 'Sialkot', 'Quetta', 'Abbottabad'],
+  sa: ['Riyadh', 'Jeddah', 'Dammam', 'Al-Khobar', 'Jubail', 'Mecca', 'Medina', 'Yanbu', 'Taif'],
+  ae: ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'Al Ain'],
+  qa: ['Doha', 'Al Rayyan', 'Al Wakrah'],
+  om: ['Muscat', 'Salalah', 'Sohar'],
+  kw: ['Kuwait City', 'Hawally', 'Salmiya'],
+  bh: ['Manama', 'Riffa', 'Muharraq'],
+  uk: ['London', 'Birmingham', 'Manchester', 'Leeds', 'Glasgow'],
+  us: ['New York', 'Chicago', 'Houston', 'Dallas', 'Los Angeles'],
+  ca: ['Toronto', 'Vancouver', 'Calgary', 'Montreal', 'Ottawa'],
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -26,12 +55,48 @@ export default function ContactPage() {
     phone: '',
     message: '',
   });
+
+  const [country, setCountry] = useState('');
+  const [showOtherCountry, setShowOtherCountry] = useState(false);
+  const [otherCountry, setOtherCountry] = useState('');
+
+  const [city, setCity] = useState('');
+  const [showOtherCity, setShowOtherCity] = useState(false);
+  const [otherCity, setOtherCity] = useState('');
+
   const [gradeLevel, setGradeLevel] = useState('');
   const [showOtherInput, setShowOtherInput] = useState(false);
   const [otherGrade, setOtherGrade] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<FormErrors>({});
+
+  const handleCountryChange = (value: string) => {
+    setCountry(value);
+    setCity('');
+    setOtherCity('');
+    if (value === 'other') {
+      setShowOtherCountry(true);
+      setCity('other');
+      setShowOtherCity(true);
+    } else {
+      setShowOtherCountry(false);
+      setOtherCountry('');
+      setShowOtherCity(false);
+    }
+    setErrors(prev => ({ ...prev, country: undefined, city: undefined }));
+  };
+
+  const handleCityChange = (value: string) => {
+    setCity(value);
+    if (value === 'other') {
+      setShowOtherCity(true);
+    } else {
+      setShowOtherCity(false);
+      setOtherCity('');
+    }
+    setErrors(prev => ({ ...prev, city: undefined }));
+  };
 
   const handleGradeChange = (value: string) => {
     setGradeLevel(value);
@@ -68,11 +133,25 @@ export default function ContactPage() {
     }
 
     // Phone validation
-  if (!formData.phone.trim()) {
-  newErrors.phone = 'Phone number is required';
-} else if (!isValidPhoneNumber(formData.phone)) {
-  newErrors.phone = 'Please enter a valid phone number e.g +966541935900';
-}
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!isValidPhoneNumber(formData.phone)) {
+      newErrors.phone = 'Please enter a valid phone number e.g +966541935900';
+    }
+
+    // Country validation
+    if (!country) {
+      newErrors.country = 'Please select your country';
+    } else if (country === 'other' && !otherCountry.trim()) {
+      newErrors.country = 'Please specify your country';
+    }
+
+    // City validation
+    if (!city) {
+      newErrors.city = 'Please select or specify your city';
+    } else if (city === 'other' && !otherCity.trim()) {
+      newErrors.city = 'Please specify your city';
+    }
 
     // Grade Level validation
     if (!gradeLevel) {
@@ -100,8 +179,18 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    const finalCountry = country === 'other'
+      ? otherCountry.trim()
+      : (countriesList.find(c => c.code === country)?.name || country);
+
+    const finalCity = (city === 'other' || country === 'other')
+      ? otherCity.trim()
+      : city;
+
     const data = {
       ...formData,
+      country: finalCountry,
+      city: finalCity,
       gradeLevel: gradeLevel === 'other' ? otherGrade : gradeLevel,
     };
 
@@ -124,6 +213,12 @@ export default function ContactPage() {
           phone: '',
           message: '',
         });
+        setCountry('');
+        setShowOtherCountry(false);
+        setOtherCountry('');
+        setCity('');
+        setShowOtherCity(false);
+        setOtherCity('');
         setGradeLevel('');
         setShowOtherInput(false);
         setOtherGrade('');
@@ -212,7 +307,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-5 sm:p-7 md:p-8 border border-white/40 shadow-lg">
+              <div className="hidden lg:block bg-white/80 backdrop-blur-xl rounded-2xl p-5 sm:p-7 md:p-8 border border-white/40 shadow-lg">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Follow Us</h3>
                 <p className="text-gray-600 text-xs sm:text-sm mb-5">Stay connected with us on social media for curriculum updates and announcements.</p>
                 <div className="flex gap-2.5 flex-wrap">
@@ -240,11 +335,12 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white/90 backdrop-blur-xl rounded-2xl p-5 sm:p-7 md:p-8 border border-white/40 shadow-xl w-full min-w-0"
+              className="space-y-6 sm:space-y-8 w-full min-w-0"
             >
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              <div className="bg-white/90 backdrop-blur-xl rounded-2xl p-5 sm:p-7 md:p-8 border border-white/40 shadow-xl w-full min-w-0">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
 
-              <div className="space-y-4 sm:space-y-5 w-full">
+                <div className="space-y-4 sm:space-y-5 w-full">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                   <div className="w-full min-w-0">
                     <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
@@ -306,6 +402,111 @@ export default function ContactPage() {
                   {errors.phone && (
                     <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
                   )}
+                </div>
+
+                {/* Country and City Row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                  {/* Country Field */}
+                  <div className="w-full min-w-0">
+                    <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
+                      Country <span className="text-red-500">*</span>
+                    </label>
+                    <Select value={country} onValueChange={handleCountryChange}>
+                      <SelectTrigger className={`w-full bg-white text-sm ${errors.country ? 'border-red-500' : ''}`}>
+                        <SelectValue placeholder="Select Country" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white max-h-72">
+                        {countriesList.map((c) => (
+                          <SelectItem key={c.code} value={c.code}>
+                            <span className="flex items-center gap-2">
+                              <span>{c.flag}</span>
+                              <span>{c.name}</span>
+                            </span>
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    {errors.country && (
+                      <p className="text-red-500 text-xs mt-1">{errors.country}</p>
+                    )}
+
+                    {showOtherCountry && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="mt-2.5 w-full min-w-0"
+                      >
+                        <Input
+                          value={otherCountry}
+                          onChange={(e) => {
+                            setOtherCountry(e.target.value);
+                            setErrors(prev => ({ ...prev, country: undefined }));
+                          }}
+                          placeholder="Please specify your country"
+                          className="w-full bg-white text-sm"
+                        />
+                      </motion.div>
+                    )}
+                  </div>
+
+                  {/* City Field */}
+                  <div className="w-full min-w-0">
+                    <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
+                      City <span className="text-red-500">*</span>
+                    </label>
+
+                    {country && country !== 'other' && citiesByCountry[country] ? (
+                      <Select value={city} onValueChange={handleCityChange}>
+                        <SelectTrigger className={`w-full bg-white text-sm ${errors.city ? 'border-red-500' : ''}`}>
+                          <SelectValue placeholder="Select City" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white max-h-72">
+                          {citiesByCountry[country].map((cityName) => (
+                            <SelectItem key={cityName} value={cityName}>
+                              {cityName}
+                            </SelectItem>
+                          ))}
+                          <SelectItem value="other">Other City</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    ) : (
+                      <Input
+                        value={otherCity}
+                        disabled={!country}
+                        onChange={(e) => {
+                          setOtherCity(e.target.value);
+                          setCity('other');
+                          setErrors(prev => ({ ...prev, city: undefined }));
+                        }}
+                        placeholder={country ? "Enter your city name" : "Select country first"}
+                        className={`w-full !placeholder-gray-400 bg-white text-sm ${errors.city ? 'border-red-500' : ''}`}
+                      />
+                    )}
+
+                    {errors.city && (
+                      <p className="text-red-500 text-xs mt-1">{errors.city}</p>
+                    )}
+
+                    {country !== 'other' && showOtherCity && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="mt-2.5 w-full min-w-0"
+                      >
+                        <Input
+                          value={otherCity}
+                          onChange={(e) => {
+                            setOtherCity(e.target.value);
+                            setErrors(prev => ({ ...prev, city: undefined }));
+                          }}
+                          placeholder="Please specify your city"
+                          className="w-full bg-white text-sm"
+                        />
+                      </motion.div>
+                    )}
+                  </div>
                 </div>
 
                 <div className="w-full min-w-0">
@@ -395,7 +596,31 @@ export default function ContactPage() {
                   <Send className="w-4 h-4 ml-1" />
                 </Button>
               </div>
-            </motion.div>
+            </div>
+
+            {/* Mobile-only Follow Us section placed below the contact form */}
+            <div className="block lg:hidden bg-white/80 backdrop-blur-xl rounded-2xl p-5 sm:p-7 border border-white/40 shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Follow Us</h3>
+              <p className="text-gray-600 text-xs sm:text-sm mb-5">Stay connected with us on social media for curriculum updates and announcements.</p>
+              <div className="flex gap-2.5 flex-wrap">
+                {[
+                  { platform: 'Facebook', href: "https://web.facebook.com/profile.php?id=61579559790036" },
+                  { platform: 'Instagram', href: "https://www.instagram.com/smartstudycenteronline" },
+                  { platform: 'Linkedin', href: "https://www.linkedin.com/company/smartstudycenteronline/" }
+                ].map(({ platform, href }) => (
+                  <a
+                    key={platform}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2 text-xs sm:text-sm bg-gradient-to-r from-[#C71585] to-[#FF1493] text-white font-semibold rounded-full hover:shadow-md hover:scale-105 transition-all duration-300"
+                  >
+                    {platform}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
           </div>
         </div>
       </section>
